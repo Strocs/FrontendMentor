@@ -1,0 +1,13 @@
+.card-container {
+  margin: 10rem 2.2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  max-width: 50rem;
+}
+
+@media (min-width: 1440px) {
+	.card-container {
+    max-width: 95rem;
+    display: flex;
+  }
+}

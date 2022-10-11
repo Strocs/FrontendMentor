@@ -1,0 +1,17 @@
+{
+  "name": "stats-preview-card",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^3.1.0"
+  },
+  "dependencies": {
+    "reset-css": "^5.0.1"
+  }
+}

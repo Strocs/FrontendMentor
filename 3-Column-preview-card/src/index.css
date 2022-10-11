@@ -1,0 +1,19 @@
+:root {
+	font-size: 62.5%;
+
+	--big: "Big Shoulders Display", cursive;
+	--lexend: "Lexend Deca", sans-serif;
+
+	--Bright-orange: #FF9A08;
+	--Dark-cyan: #007E98;
+	--Very-dark-cyan: #D64045;
+	--Transparent-white: hsla(0, 0%, 100%, 0.75);
+	--Very-light-gray: hsl(0, 0%, 95%);
+	--Very-light-gray2: hsl(202, 39%, 17%);
+	--Very-light-gray3: hsl(202, 35%, 27%);
+}
+
+#root {
+  background: linear-gradient(135deg, var(--Very-light-gray2), var(--Very-light-gray3));
+  font-size: 1.5rem;
+}

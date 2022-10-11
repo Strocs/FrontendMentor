@@ -1,0 +1,114 @@
+---
+const { message } = Astro.props
+const { sender, type, content, price } = message
+
+const user = (sender === "user")
+const text = (type === "text")
+const images = (type === "images")
+const offer = (type === "offer")
+
+---
+<li 
+  class={
+    user 
+      ? `user user-${text ? 'text' : images ? 'images' : 'offer'}` 
+      : `walker walker-${text ? 'text' : images ? 'images' : 'offer'}`
+  }
+>
+
+  {text && <p>{content}</p>}
+  
+  {images && 
+    content.map(image => 
+      <img src={`./images/${image}`} alt="Photo"/>
+    )
+  }
+  
+  {offer && 
+    <div>
+      <div></div>
+      <p>{content} walk</p>
+    </div> 
+    <h3>{price}</h3>
+  }
+
+</li>
+
+<style>
+
+li {
+    display: flex;
+    gap: .8rem;
+  }
+  
+  .user{
+    align-self: flex-end;
+    color: var(--Desaturated-Dark-Violet);
+    background-color: white;
+    border-radius: 1.2rem 1.2rem .4rem 1.2rem;
+  }
+  
+  .walker {
+    color: var(--Moderate-Violet);
+    background-color: var(--Pale-Violet2);
+    border-radius: 1.2rem 1.2rem 1.2rem .4rem;
+  }
+
+  .user-text, .walker-text {
+    max-width: 53%;
+    padding: .6rem .8rem;
+    font-size: .8rem;
+    line-height: 1.1rem;
+  }
+
+  .user-text {
+    box-shadow: 0 1rem 2rem 0 var(--Pale-Violet2);
+  }
+
+  .walker:nth-child(2) {
+    margin-bottom: 1rem;
+  }
+  .user:nth-child(5) {
+    margin-bottom: 1rem;
+  }
+
+  .user-images {
+    background-color: transparent;
+  }
+
+  .user-images > img {
+    height: 4rem;
+    border-radius: 1rem;
+  }
+
+ .walker-offer {
+    max-width: 68%;
+    background: linear-gradient(90deg, var(--Light-Magenta), var(--Light-Violet));
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem .8rem;
+  }
+
+  .walker-offer div > div {
+    height: 1rem;
+    width: 1rem;
+    border: solid .1rem var(--Very-Light-Magenta);
+    border-radius: 100%;
+    margin-right: 1rem;
+  }
+
+  .walker-offer > div {
+    display: flex;
+    align-items: center;
+    font-size: .8rem;
+    color: white;
+  }
+
+  .walker-offer > h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-right: .8rem;
+  }
+
+</style>

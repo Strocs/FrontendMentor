@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link rel="icon" type="image/png" sizes="32x32" href="./src/assets/favicon-32x32.png" />
+
+		<title>Frontend Mentor | Stats preview card component</title>
+		<link rel="stylesheet" href="./node_modules/reset-css/reset.css" />
+		<link rel="stylesheet" href="./src/styles/styles.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+		<main class="card-container">
+			<picture class="card-image">
+				<source media="(min-width: 440px)" srcset="./src/assets/image-header-desktop.jpg">
+				<img class="image-mobile" src="./src/assets/image-header-mobile.jpg" alt="" />
+			</picture>
+			<div class="card-content">
+				<h1 class="content-title">Get <span>insights</span> that help your business grow.</h1>
+				<p class="content-description">Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and overall efficiency.</p>
+				<div class="content-data">
+					<div class="data-companies">
+						<h2 class="companies-number">10k+</h2>
+						<p class="companies-text">companies</p>
+					</div>
+					<div class="data-templates">
+						<h2 class="templates-number">314</h2>
+						<p class="templates-text">templates</p>
+					</div>
+					<div class="data-queries">
+						<h2 class="queries-number">12M+</h2>
+						<p class="queries-text">queries</p>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>

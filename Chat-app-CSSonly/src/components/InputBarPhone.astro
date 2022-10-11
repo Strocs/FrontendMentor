@@ -1,0 +1,61 @@
+---
+---
+
+<div class="body__text-box">
+	<input class="text-box__input" type="text" placeholder="Type a message..." />
+	<button class="text-box__send-btn" type="submit"><span></span></button>
+</div>
+
+<style>
+	.body__text-box {
+		background-color: white;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 2rem;
+		height: 3.6rem;
+		width: 100%;
+	}
+
+	.text-box__input {
+		border: none;
+		padding-left: 1.2rem;
+		width: 76%;
+	}
+	.text-box__input:focus {
+		outline: none;
+	}
+
+	.text-box__input::placeholder {
+		font-size: 1rem;
+	}
+
+	.text-box__send-btn {
+    position: relative;
+		background-color: var(--Very-Dark-Desaturated-Violet);
+		width: 2.6rem;
+		height: 2.6rem;
+		border-radius: 100%;
+	}
+
+	.text-box__send-btn span::after,
+	.text-box__send-btn span::before {
+    content: '';
+    position: absolute;
+    width: .7rem;
+    height: .2rem;
+    background-color: white;
+    left: 0;
+    right: 0;
+    margin: auto;
+	}
+	.text-box__send-btn span::after {
+    top: 38%;
+    transform: rotate(45deg);
+  }
+	.text-box__send-btn span::before {
+    bottom: 38%;
+    transform: rotate(-45deg);
+  }
+  
+</style>

@@ -1,0 +1,54 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Phone from "../components/Phone.astro"
+---
+
+<Layout title="Frontend Mentor | Chat App with CSS Only">
+	<main class="container__chat-app">
+		<Phone />
+		<section class="chat-app__description">
+			<h1 class="description__title">Simple booking</h1>
+			<p class="description__text">
+				Stay in touch with our dog walkers through the chat interface. This makes it easy to discuss arrangements and make bookings. Once the walk has been completed you can rate your walker and book
+				again all through the chat.
+			</p>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	.container__chat-app {
+		display: flex;
+		flex-wrap: wrap;
+		margin: auto 3rem;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+	}
+
+	.chat-app__description {
+		text-align: center;
+		padding-bottom: 6rem;
+		max-width: 45rem;
+	}
+
+	.description__title {
+		font-size: 4rem;
+		font-weight: 600;
+		margin-bottom: 2.8rem;
+	}
+
+	.description__text {
+		font-size: 1.6rem;
+		line-height: 2.8rem;
+	}
+
+	@media (min-width: 40rem) {
+		.chat-app__description {
+			text-align: start;
+			margin-left: 12rem;
+			padding: 0;
+			
+		}
+	}
+</style>

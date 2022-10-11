@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'Jakarta';
+  src: url('./assets/fonts/PlusJakartaSans-VariableFont_wght.ttf');
+}
+
+:root {
+  --Red: hsl(1, 90%, 64%);
+  --Blue: hsl(219, 85%, 26%);
+  --White: hsl(0, 0%, 100%);
+  --Verylightgrayishblue:hsl(210,60%,98%);
+  --Lightgrayishblue1:hsl(211, 68%, 94%);
+  --Lightgrayishblue2:hsl(205, 33%, 90%);
+  --Grayishblue:hsl(219, 14%, 63%);
+  --Darkgrayishblue:hsl(219, 12%, 42%);
+  --Verydarkblue:hsl(224, 21%, 14%);
+
+  --jakarta: 'Jakarta', sans-serif;;
+}
+
+
+html {
+  font-family: var(--jakarta);
+  font-size: 62.5%;
+}
+
+#root {
+  font-size: 1.4rem;
+  background-color: var(--Verylightgrayishblue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media (min-width: 30rem) {
+  #root {
+    height: 100vh;
+    width: 100vw;
+  }
+}

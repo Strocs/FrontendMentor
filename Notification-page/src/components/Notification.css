@@ -1,0 +1,110 @@
+a {
+  text-decoration: none;
+  height: fit-content;
+}
+.notification-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+  padding: 1.4rem 1.8rem;
+  border-radius: 1rem;
+  transition: background-color 200ms ease;
+}
+
+.notification-unread {
+  background-color: var(--Verylightgrayishblue);
+  cursor: pointer;
+}
+
+.list-container{
+  display: flex;
+  gap: 1.2rem;
+  line-height: 1.8rem;
+}
+
+.notification-avatar {
+  width: 4rem;
+  height: 4rem;
+}
+
+.content-name {
+  font-weight: bolder;
+  color: var(--Verydarkblue);
+  transition: color 200ms ease;
+}
+
+.content-name:hover {
+  color: var(--Blue);
+}
+
+.content-text {
+  color: var(--Darkgrayishblue);
+}
+
+.text-image {
+  width: 4rem;
+  height: 4rem;
+  margin-left: 2rem;
+}
+
+.text-link {
+  font-weight: bolder;
+  text-decoration: none;
+  color: var(--Blue);
+  transition: color 200ms ease;
+}
+
+.text-link:hover {
+  color: var(--Blue);
+}
+
+.text-link-reacted {
+  color: var(--Darkgrayishblue);
+}
+
+.content-since {
+  margin-top: .2rem;
+  color: var(--Grayishblue);
+}
+
+.notification-message {
+  margin: 1rem 0;
+  border: solid .1rem var(--Lightgrayishblue2);
+  border-radius: .4rem;
+  transition: background-color 200ms ease;
+}
+
+.notification-message:hover {
+  background-color: var(--Lightgrayishblue1);
+}
+
+.notification-message a p {
+  padding: 1.4rem;
+  color: var(--Darkgrayishblue);
+}
+
+.unread-dot {
+  display: inline-block;
+  border-radius: 100%;
+  margin-left: .8rem;
+  height: .8rem;
+  width: .8rem;
+  background-color: var(--Red);
+}
+
+@media (min-width: 30rem) {
+  .notification-list {
+    padding: 1.8rem;
+  }
+
+  .content-name, .content-text, .content-since, .notification-message {
+    font-size: 1.6rem;
+  }
+  .content-since {
+    margin-top: .6rem;
+  }
+  .text-image {
+    width: 5rem;
+    height: 5rem;
+  }
+}

@@ -1,0 +1,111 @@
+---
+const { chat } = Astro.props
+const { name, avatar, status } = chat
+---
+
+<div class="phone__chat-tab">
+	<div class="chat-tab__container">
+		<div class="chat-tab__notch"></div>
+		<button class="chat-tab__back-btn" type="button"><span></span></button>
+		<img class="chat-tab__avatar" src={`./images/${avatar}`} alt={name} />
+		<div class="chat-tab__name">
+			<h2>{name}</h2>
+			<span>{status}</span>
+		</div>
+	</div>
+	<button class="chat-tab__menu-btn" type="button"><span>•</span></button>
+</div>
+
+<style>
+	.phone__chat-tab {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background: linear-gradient(90deg, var(--Light-Violet), var(--Light-Magenta));
+		padding: 3rem 1rem 1.2rem;
+		border-radius: 2rem 2rem 0.6rem 0.6rem;
+	}
+
+	.chat-tab__container {
+		display: flex;
+		align-items: center;
+	}
+
+	.chat-tab__notch {
+		background-color: white;
+		position: absolute;
+		top: -0.1rem;
+		left: 0;
+		right: 0;
+		height: 2rem;
+		width: 13rem;
+		margin: 0 auto;
+		border-radius: 0 0 1.5rem 1.5rem;
+	}
+	.chat-tab__back-btn {
+		height: 0.9rem;
+		position: relative;
+	}
+
+	.chat-tab__back-btn span::before,
+	.chat-tab__back-btn span::after {
+		content: "";
+		position: absolute;
+		height: 0.5rem;
+		width: 0.2rem;
+		background-color: #fff;
+	}
+
+	.chat-tab__back-btn span::before {
+		top: 0;
+		transform: rotate(26deg);
+	}
+
+	.chat-tab__back-btn span::after {
+		bottom: 0;
+		transform: rotate(-26deg);
+	}
+
+	.chat-tab__avatar {
+		height: 2.2rem;
+		border-radius: 100%;
+		border: solid 0.1rem white;
+		margin: 0 1rem 0 0.6rem;
+	}
+
+	.chat-tab__name h2 {
+		font-size: 1.1rem;
+		font-weight: 500;
+		letter-spacing: 0.03rem;
+		margin-bottom: 0.2rem;
+	}
+
+	.chat-tab__name span {
+		color: var(--Pale-Violet);
+		font-size: 0.85rem;
+	}
+
+	.chat-tab__menu-btn {
+		position: relative;
+		color: white;
+		font-size: 0.6rem;
+		height: 1.2rem;
+		justify-self: flex-end;
+	}
+
+	.chat-tab__menu-btn::before,
+	.chat-tab__menu-btn::after {
+		content: "•";
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+	.chat-tab__menu-btn::before {
+		top: 0;
+	}
+	.chat-tab__menu-btn::after {
+		bottom: 0;
+	}
+</style>

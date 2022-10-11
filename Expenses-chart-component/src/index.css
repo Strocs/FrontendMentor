@@ -1,0 +1,24 @@
+:root {
+	--Soft-red: hsl(10, 79%, 65%);
+	--Cyan: hsl(186, 34%, 60%);
+	--Dark-brown: hsl(25, 47%, 15%);
+	--Medium-brown: hsl(28, 10%, 53%);
+	--Cream: hsl(27, 66%, 92%);
+	--Very-pale-orange: hsl(33, 100%, 98%);
+
+	--borderPadding: 2.2rem;
+	--borderMargin: 1.6rem;
+	--borderPadding2: 3.8rem;
+	--borderMargin2: 2.2rem;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background-color: var(--Cream);
+	height: 100vh;
+	font-family: "DM Sans", sans-serif;
+}
+

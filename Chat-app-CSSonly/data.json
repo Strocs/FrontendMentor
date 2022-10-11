@@ -1,0 +1,47 @@
+{
+	"chat": { "name": "Samuel Green", "avatar": "avatar.jpg", "status": "Available to Walk" },
+	"messages": [
+		{
+			"sender": "walker",
+			"type": "text",
+			"content": "That sounds great. I'd be happy with that."
+		},
+		{
+			"sender": "walker",
+			"type": "text",
+			"content": "Could you send over some pictures of your dog, please?"
+		},
+		{
+			"sender": "user",
+			"type": "images",
+			"content": ["dog-image-1.jpg", "dog-image-2.jpg", "dog-image-3.jpg"]
+		},
+		{
+			"sender": "user",
+			"type": "text",
+			"content": "Here are a few pictures. She's a happy girl!"
+		},
+		{
+			"sender": "user",
+			"type": "text",
+			"content": "Can you make it?"
+		},
+		{
+			"sender": "walker",
+			"type": "text",
+			"content": "She looks so happy! The time we discussed works. How long shall I take her out for?"
+		},
+		{
+			"sender": "walker",
+			"type": "offer",
+			"content": "30 minute",
+			"price": "$29"
+		},
+		{
+			"sender": "walker",
+			"type": "offer",
+			"content": "1 hour",
+			"price": "$49"
+		}
+	]
+}

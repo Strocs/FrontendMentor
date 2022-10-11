@@ -1,0 +1,12 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+@media (min-width: 1440px) {
+  .main-container {
+    height: 100vh;
+  }
+}
+

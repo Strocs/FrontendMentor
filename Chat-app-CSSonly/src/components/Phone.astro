@@ -1,0 +1,44 @@
+---
+import Messages from "./Messages.astro"
+import data from "../../data.json"
+import HeaderPhone from "./HeaderPhone.astro"
+import InputBarPhone from "./InputBarPhone.astro"
+const messages = data.messages
+---
+
+<section class="container__phone">
+	<HeaderPhone chat={data.chat} />
+	<div class="phone__body">
+		<ul class="body__messages">
+			{messages.map((msj) => <Messages message={msj} />)}
+		</ul>
+		<InputBarPhone />
+	</div>
+</section>
+
+<style>
+	.container__phone {
+		background: white;
+		max-width: 23rem;
+		padding: 1rem;
+		margin: 6.4rem 0;
+		border-radius: 2.8rem;
+		box-shadow: 0 3em 3rem -0.8rem lightgray;
+		cursor: default;
+		user-select: none;
+	}
+
+	.body__messages {
+		display: flex;
+		flex-direction: column;
+		gap: .8rem;
+		padding-bottom: 1.6rem;
+	}
+	
+	.phone__body {
+		background-color: var(--Light-Grayish-Violet);
+		border-radius: 0.6rem 0.6rem 2rem 2rem;
+		padding: 1rem;
+	}
+
+</style>

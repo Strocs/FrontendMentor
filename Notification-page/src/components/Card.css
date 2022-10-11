@@ -1,0 +1,54 @@
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.6rem 0 1.4rem;
+}
+
+.header-count {
+  align-items: center;
+  display: flex;
+  font-weight: bolder;
+}
+
+.count-title  {
+  font-size: 1.8rem;
+}
+.header-count span {
+  margin-left: .6rem;
+  font-size: 1.4rem;
+  color: var(--White);
+  background-color: var(--Blue);
+  padding: .4rem 1rem .4rem;
+  border-radius: .6rem;
+}
+
+.header-btn {
+  border: none;
+  background-color: transparent;
+  color: var(--Darkgrayishblue);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: color 200ms ease;
+}
+
+.header-btn:hover {
+  color: var(--Blue);
+}
+
+@media (min-width: 30rem) {
+  .notification-header {
+    padding: 3.4rem 0 2.4rem;
+  }
+  .count-title {
+    font-size: 2.4rem;
+  }
+
+  .header-btn {
+    font-size: 1.8rem;
+  }
+
+  .header-count span {
+    margin-left: .8rem;
+    padding: .6rem 1.1rem .8rem;
+  }
+}

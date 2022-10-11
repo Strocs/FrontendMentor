@@ -1,0 +1,96 @@
+.expenses-container {
+  margin: var(--borderMargin);
+  display: flex;
+  flex-direction: column;
+  gap: var(--borderMargin);
+  max-width: 53rem;
+  width: 100%;
+}
+
+.expenses-spending {
+  background-color: var(--Very-pale-orange);
+  padding: 2.6rem var(--borderPadding);
+  border-radius: 1rem;
+}
+
+.spending-title {
+  color: var(--Dark-brown);
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.expenses-spending hr {
+  background-color: var(--Cream);
+  border: none;
+  height: .2rem;
+}
+
+.spending-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 1.4rem 0;
+}
+
+.spending-total h2 {
+  color: var(--Medium-brown);
+  font-size: 1.5rem;
+}
+
+.spending-total h3 {
+  color: var(--Dark-brown);
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+.total-this-month {
+  line-height: 3.4rem;
+}
+
+.total-last-month {
+  text-align: end;
+  line-height: 2rem;
+}
+
+.total-last-month h3 {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 560px) {
+  .expenses-container {
+    gap: var(--borderMargin2);
+  }
+  
+  .expenses-spending {
+    padding: 3.8rem var(--borderPadding2);
+    border-radius: 2rem;
+  }
+  
+  .spending-title {
+    font-size: 3.2rem;
+  }
+  
+  .spending-total {
+    margin-top: 2rem;
+  }
+  
+  .spending-total h2 {
+    font-size: 1.8rem;
+  }
+  
+  .spending-total h3 {
+    font-size: 4.8rem;
+  }
+  
+  .total-this-month {
+    line-height: 4.4rem;
+  }
+  
+  .total-last-month {
+    line-height: 2.2rem;
+  }
+  
+  .total-last-month h3 {
+    font-size: 1.8rem;
+  }
+}

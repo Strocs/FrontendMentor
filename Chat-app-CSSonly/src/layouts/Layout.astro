@@ -1,0 +1,92 @@
+---
+export interface Props {
+	title: string
+}
+
+const { title } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/images/favicon-32x32.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link rel="stylesheet" href="../../node_modules/reset-css/reset.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--Pale-Violet: hsl(276, 100%, 81%);
+		--Pale-Violet2: hsla(278, 26%, 82%, 0.336);
+		--Moderate-Violet: hsl(276, 55%, 52%);
+		--Desaturated-Dark-Violet: hsl(271, 15%, 43%);
+		--Grayish-Blue: hsl(206, 6%, 79%);
+		--Very-Dark-Desaturated-Violet: hsl(271, 36%, 24%);
+		--Dark-Grayish-Violet: hsl(270, 7%, 64%);
+
+		--Light-Magenta: hsl(293, 100%, 63%);
+		--Light-Violet: hsl(264, 100%, 61%);
+
+		--Light-Grayish-Violet: hsl(270, 20%, 96%);
+		--Very-Light-Magenta: hsl(289, 100%, 72%);
+	}
+
+	html {
+		font-family: "Rubik", sans-serif;
+		font-size: 62.5%;
+		background-color: var(--Light-Grayish-Violet);
+		color: var(--Dark-Grayish-Violet);
+	}
+
+	body {
+		height: 100%;
+		width: 100%;
+	}
+
+	body::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: -31.5rem;
+		width: 50rem;
+		height: 50rem;
+		background: linear-gradient(225deg, var(--Light-Magenta) -40%, var(--Light-Violet));
+		border-radius: 0 0 100% 100%;
+		z-index: -1;
+	}
+
+	h1 {
+		color: var(--Very-Dark-Desaturated-Violet);
+	}
+
+	h2 {
+		color: var(--Light-Grayish-Violet);
+	}
+
+	button {
+		border: none;
+		background-color: transparent;
+	}
+
+	input::placeholder {
+		color: var(--Grayish-Blue);
+	}
+
+	@media (min-width: 40rem) {
+		body::before {
+			left: -14rem;
+			width: 40vw;
+			height: 88%;
+		}
+	}
+</style>

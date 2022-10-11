@@ -1,0 +1,94 @@
+:root {
+	font-family: "Red Hat Text", sans-serif;
+	font-size: 62.5%;
+	font-weight: 700;	
+
+	--Grayish-blue: hsl(237, 18%, 59%);
+	--Soft-red: hsl(345, 95%, 68%);
+	--Soft-red2: hsl(344, 62%, 57%);
+	--Dark-unsaturated-blue: hsl(236, 21%, 26%);
+	--Dark-unsaturated-blue2: hsl(240, 21%, 22%);
+	--Very-dark-blue: hsl(235, 16%, 14%);
+	--Very-Very-dark-blue: hsl(234, 17%, 12%);
+}
+
+@keyframes movementStars {
+	0% {
+		background-position: -150% 0;
+	}
+	100% {
+		background-position: 150% 0;
+	}
+}
+
+body {
+	background: linear-gradient(var(--Very-dark-blue), #2f2439);
+	height: 100vh;
+	width: 100vw;
+}
+
+#root {
+	font-size: 1.4rem;
+	color: white;
+	background: url(../src/assets/bg-stars.svg);
+	animation: movementStars 30s infinite linear;
+	height: 100%;
+	width: 100%;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	height: 100%;
+	width: 100%;
+	background: url(../src/assets/pattern-hills.svg) no-repeat;
+	background-position: bottom;
+	background-size: contain;
+
+}
+
+h1, p {
+	text-transform: uppercase;
+	font-size: 2rem;
+	letter-spacing: .6rem;
+	text-align: center;
+}
+
+h1 {
+	margin-top: 20rem;
+}
+
+h2 {
+	font-size: 6.4rem;
+	text-align: center;
+}
+
+p {
+	color: var(--Grayish-blue);
+	font-size: 1.2rem;
+	letter-spacing: .4rem;
+}
+
+.countdown-container {
+	display: flex;
+	gap: 3rem;
+	margin-bottom: 30rem;
+}
+
+.icon-container {
+	margin-bottom: 10rem ;
+}
+
+.icon {
+	height: 3rem;
+	width: 3rem;
+	color: var(--Grayish-blue);
+	margin: 0 1.4rem;
+	transition: color 200ms ease;
+}
+
+.icon:hover {
+	color: var(--Soft-red);
+}

@@ -1,0 +1,100 @@
+.countdown-box__container {
+	position: relative;
+}
+
+.countdown-box__wrapper {
+	position: relative;
+	overflow: hidden;
+	margin: 3rem 0;
+	box-shadow: 0 0.8rem 0 0 var(--Very-Very-dark-blue);
+	border-radius: 0.8rem;
+	cursor: default;
+	user-select: none;
+}
+
+.countdown-box__wrapper::after,
+.countdown-box__wrapper::before {
+	content: "";
+	position: absolute;
+	height: 0.8rem;
+	width: 0.8rem;
+	border-radius: 100%;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	background-color: var(--Very-Very-dark-blue);
+}
+
+.countdown-box__wrapper::after {
+	left: -0.4rem;
+}
+
+.countdown-box__wrapper::before {
+	right: -0.4rem;
+}
+
+.cards__divider {
+	width: 12rem;
+	height: 6rem;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.cards__top {
+	border-radius: 0.8rem 0.8rem 0 0;
+	background-color: var(--Dark-unsaturated-blue2);
+}
+
+.cards__bottom {
+	border-radius: 0 0 0.8rem 0.8rem;
+	background-color: var(--Dark-unsaturated-blue);
+}
+
+.cards__top h2 {
+	color: var(--Soft-red2);
+	margin-bottom: -50%;
+}
+
+.cards__bottom h2 {
+	margin-top: -50%;
+	color: var(--Soft-red);
+}
+
+.cards__flip-container {
+	position: absolute;
+	height: 100%;
+	animation: flip 1s infinite;	
+}
+.cards__flip-empty {
+	height: 50%;
+	background: transparent;
+}
+
+.cards__flip {
+	
+}
+
+.cards__flip h2 {
+	color: var(--Soft-red2);
+	margin-bottom: -50%;
+	animation: textColor 1s steps(2, end) infinite;
+}
+@keyframes textColor {	
+	to {
+		color: var(--Soft-red);
+	}
+}
+
+@keyframes backgroundColor {
+	to {
+		background-color: var(--Dark-unsaturated-blue);
+	}
+}
+
+@keyframes flip {
+	to {
+		transform: rotateX(180deg);
+	}
+}

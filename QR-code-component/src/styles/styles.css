@@ -1,0 +1,72 @@
+:root {
+  /* Colors */
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(212, 45%, 89%);
+  --grayish-blue: hsl(220, 15%, 55%);
+  --dark-blue: hsl(218, 44%, 22%);
+
+  /* font */
+  --outfit: 'Outfit', sans-serif;
+
+  /* font size */
+  --p: 1.5rem;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--light-gray);
+  font-family: var(--outfit);
+  font-size: var(--p);
+}
+
+.QR-container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  max-width: 30rem;
+  width: 80%;
+  padding: 1.5rem;
+  margin: auto;
+  border-radius: 2rem;
+  text-align: center;
+  box-shadow: 0rem 2rem 5rem -4rem var(--grayish-blue);
+}
+
+.QR-image {
+  border-radius: 1rem;
+}
+
+.info-title {
+  color: var(--dark-blue);
+  font-size: 2.4rem;
+  padding-top: 1rem;
+}
+
+.info-description {
+  color: var(--grayish-blue);
+  padding: 0 2rem;
+  margin-top: 0;
+  padding-bottom: 1rem;
+}
+
+.attribution {
+  position: absolute;
+  width: max-content;
+  margin: 0 auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 1.1rem;
+}
+.attribution a {
+  color: var(--grayish-blue);
+  text-decoration: none;
+}
