@@ -4,6 +4,6 @@ export const timeRemaining = (deadLine) => {
 	const now = new Date().getTime(),
 		remaining = deadLine - now,
 		curr = msToDays(remaining),
-		next = msToDays(remaining + 1000)
-	return { curr, next }
+		prev = msToDays(remaining - 1000)
+	return { curr, prev }
 }

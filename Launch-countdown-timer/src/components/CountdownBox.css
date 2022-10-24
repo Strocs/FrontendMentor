@@ -5,9 +5,9 @@
 .countdown-box__wrapper {
 	position: relative;
 	overflow: hidden;
-	margin: 3rem 0;
-	box-shadow: 0 0.8rem 0 0 var(--Very-Very-dark-blue);
-	border-radius: 0.8rem;
+	margin: 1.8rem 0;
+	box-shadow: 0 0.4rem 0 0 var(--Very-Very-dark-blue);
+	border-radius: 0.6rem;
 	cursor: default;
 	user-select: none;
 }
@@ -16,13 +16,14 @@
 .countdown-box__wrapper::before {
 	content: "";
 	position: absolute;
-	height: 0.8rem;
-	width: 0.8rem;
+	height: 0.7rem;
+	width: 0.7rem;
 	border-radius: 100%;
 	top: 0;
 	bottom: 0;
 	margin: auto;
 	background-color: var(--Very-Very-dark-blue);
+	z-index: 10;
 }
 
 .countdown-box__wrapper::after {
@@ -34,8 +35,8 @@
 }
 
 .cards__divider {
-	width: 12rem;
-	height: 6rem;
+	width: 7rem;
+	height: 3.5rem;
 	overflow: hidden;
 	display: flex;
 	align-items: center;
@@ -43,12 +44,10 @@
 }
 
 .cards__top {
-	border-radius: 0.8rem 0.8rem 0 0;
 	background-color: var(--Dark-unsaturated-blue2);
 }
 
 .cards__bottom {
-	border-radius: 0 0 0.8rem 0.8rem;
 	background-color: var(--Dark-unsaturated-blue);
 }
 
@@ -62,39 +61,89 @@
 	color: var(--Soft-red);
 }
 
-.cards__flip-container {
-	position: absolute;
-	height: 100%;
-	animation: flip 1s infinite;	
-}
-.cards__flip-empty {
-	height: 50%;
-	background: transparent;
-}
+
+
+
 
 .cards__flip {
+	position: absolute;
+	animation-iteration-count: infinite;
+	animation-duration: 1000ms;
 	
 }
 
-.cards__flip h2 {
+.flip-top {
+	
+	border-radius: 0.4rem 0.4rem 0 0;
+	background-color: var(--Dark-unsaturated-blue2);
+	transform-origin: bottom;
+	top: 0;
+}
+.flip-bot {
+	border-radius: 0 0 0.4rem 0.4rem;
+	background-color: var(--Dark-unsaturated-blue);
+	transform-origin: top;
+	bottom: 0;
+}
+
+.animation-top {
+	animation-name: flipTop;
+	animation-timing-function: ease-in ;
+	/* animation-fill-mode:forwards; */
+}
+.animation-bot {
+	animation-name: flipBot;
+	animation-timing-function: ease-out ;
+}
+
+.flip-top h2 {
 	color: var(--Soft-red2);
 	margin-bottom: -50%;
-	animation: textColor 1s steps(2, end) infinite;
 }
-@keyframes textColor {	
-	to {
-		color: var(--Soft-red);
+
+.flip-bot h2 {
+	color: var(--Soft-red);
+	margin-top: -50%;
+}
+
+@keyframes flipTop {
+	0% {
+		transform: rotateX(0deg);
+		filter: brightness(1);
+	}
+
+	50%, 100% {
+		transform: rotateX(90deg);
+		filter: brightness(.8);
 	}
 }
 
-@keyframes backgroundColor {
-	to {
-		background-color: var(--Dark-unsaturated-blue);
+@keyframes flipBot {
+	0%, 50% {
+		transform: rotateX(90deg);
+	}
+	100% {
+		transform: rotateX(0deg);
 	}
 }
 
-@keyframes flip {
-	to {
-		transform: rotateX(180deg);
+
+@media (min-width: 44rem) {
+	.countdown-box__wrapper {
+		margin: 2.8rem 0;
+		box-shadow: 0 0.8rem 0 0 var(--Very-Very-dark-blue);
+		border-radius: 0.8rem;
 	}
+	
+	.countdown-box__wrapper::after,
+	.countdown-box__wrapper::before {
+		height: 0.9rem;
+		width: 0.9rem;
+	}
+
+	.cards__divider {
+		width: 14rem;
+		height: 7rem;
+	}
+	
 }
