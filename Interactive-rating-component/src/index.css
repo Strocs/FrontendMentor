@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--Orange: hsl(25, 97%, 53%);
+	--Light-Grey: hsl(217, 12%, 63%);
+	--Medium-Grey: hsl(216, 12%, 54%);
+	--Medium-Blue: hsl(213, 19%, 18%);
+	--Dark-Blue: hsl(215, 27%, 12%);
+	--Very-Dark-Blue: hsl(216, 12%, 8%);
+
+  font-family: 'Overpass', sans-serif;
+	font-size: .88rem;
+	font-weight: 400;
+	
+	height: 100vh;
+	width: 100vw;
+}
