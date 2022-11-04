@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/Strocs/FrontendMentor/tree/main/Interactive-rating-component](https://github.com/Strocs/FrontendMentor/tree/main/Interactive-rating-component)
+- Live Site URL: [https://strocs-interactive-rating-component.netlify.app/](https://strocs-interactive-rating-component.netlify.app/)
 
 ## My process
 
@@ -47,7 +47,7 @@ Users should be able to:
 
 ## Author
 
-- Website - [Strocs](https://www.your-site.com)
-- Frontend Mentor - [@Strocs](https://www.frontendmentor.io/profile/yourusername)
-- Instagram - [@_Strocs](https://www.twitter.com/yourusername)
+- Website - [Strocs](https://github.com/Strocs)
+- Frontend Mentor - [@Strocs](https://www.frontendmentor.io/profile/Strocs)
+- Instagram - [@_Strocs](https://www.instagram.com/_strocs/)
 
