@@ -1,7 +1,7 @@
 export const LightDarkButton = ({ mode, callback, selected, children }) => {
   return (
     <button
-      className={`flex gap-2 items-center py-[.4rem]  px-3 ${selected &&
+      className={`flex gap-1 items-center py-[.4rem]  px-3 ${selected &&
         'bg-dm-1 dark:bg-lm-5 rounded-lg'}`}
       onClick={() => callback()}
     >
