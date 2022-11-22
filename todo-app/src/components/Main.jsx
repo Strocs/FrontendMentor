@@ -29,7 +29,7 @@ export const Main = () => {
         toggleModal={toggleModal}
       >
         <TodoList>
-          {todosList.map(todo => {
+          {todosList.map((todo) => {
             return (
               <TodoItem
                 key={todo.created}

@@ -5,7 +5,7 @@ export function useTodo () {
   const [openModal, setOpenModal] = useState(false)
   const [todos, setTodos] = useState([])
 
-  const createTodo = newTodo => {
+  const createTodo = (newTodo) => {
     setTodos([
       {
         todo: newTodo,
@@ -18,17 +18,17 @@ export function useTodo () {
     ])
   }
 
-  const deleteTodo = id => {
-    setTodos(todos.filter(todo => todo.created !== id))
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.created !== id))
   }
 
   const deleteCompletedTodos = () => {
-    setTodos(todos.filter(todo => !todo.completed))
+    setTodos(todos.filter((todo) => !todo.completed))
   }
 
-  const markAsComplete = id => {
+  const markAsComplete = (id) => {
     setTodos(
-      todos.map(todo => {
+      todos.map((todo) => {
         if (todo.created === id) {
           todo.completed = !todo.completed
           return todo
@@ -42,7 +42,7 @@ export function useTodo () {
     setOpenModal(!openModal)
   }
 
-  const todosList = todos.filter(todo => {
+  const todosList = todos.filter((todo) => {
     if (todoFilter === 'Completed') {
       return todo.completed
     } else if (todoFilter === 'Active') {

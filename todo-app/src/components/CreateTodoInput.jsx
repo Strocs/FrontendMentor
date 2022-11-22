@@ -3,7 +3,7 @@ import { useRef } from 'react'
 export const CreateTodoInput = ({ callback, todoLength }) => {
   const newTodoRef = useRef(null)
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     if (newTodoRef.current !== null && newTodoRef.current.value.length > 1) {
       callback(newTodoRef.current.value)
@@ -19,7 +19,9 @@ export const CreateTodoInput = ({ callback, todoLength }) => {
           className='w-full text-xs text-lm-5 dark:text-dm-2 placeholder:text-xs placeholder:text-lm-4 dark:placeholder:text-dm-3 dark:bg-dm-6 focus:outline-none hover:outline-none outline-none'
           type='text'
           ref={newTodoRef}
-          placeholder={`Let's create ${todoLength > 0 ? 'a new' : 'your first'} todo!`}
+          placeholder={`Let's create ${
+            todoLength > 0 ? 'a new' : 'your first'
+          } todo!`}
         />
       </form>
     </div>

@@ -23,14 +23,14 @@ export const ToggleLightDark = () => {
         callback={enableLightMode}
         selected={selected}
       >
-        <Sun fill='fill-dm-4 dark:fill-lm-1 scale-[.6]' />
+        <Sun fill='fill-dm-4 dark:fill-lm-2 scale-[.6]' />
       </LightDarkButton>
       <LightDarkButton
         mode='Dark'
         callback={enableDarkMode}
         selected={!selected}
       >
-        <Moon fill='fill-dm-4 dark:fill-lm-1 scale-[.6]' />
+        <Moon fill='fill-dm-4 dark:fill-lm-2 scale-[.6]' />
       </LightDarkButton>
     </div>
   )

@@ -15,13 +15,13 @@ export const TodoItem = ({
 }) => {
   return (
     <li className='grid grid-flow-col items-center justify-between w-full bg-white dark:bg-dm-6 px-5 py-3 border-b dark:border-dm-4'>
-      <div className='flex gap-4 items-center' onClick={() => toggleModal()}>
+      <div className='flex gap-4 items-center'>
         <ToggleCompletedButton
           completed={completed}
           todoId={created}
           callback={markAsComplete}
         />
-        <div>
+        <div onClick={() => toggleModal()}>
           <TodoText completed={completed} todo={todo} />
           <CreatedDate created={created}>
             {deadline > 0 && <LimitDate deadline={deadline} />}
