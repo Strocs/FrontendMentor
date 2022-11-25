@@ -19,7 +19,7 @@ export const Main = () => {
   } = useTodo()
 
   return (
-    <main className='w-full h-full max-w-xl flex flex-col justify-between gap-4 sm:flex-row'>
+    <main className='w-full h-full max-w-2xl flex flex-col justify-between gap-4 sm:flex-row'>
       <section className='w-full'>
         <CreateTodoInput callback={createTodo} todoLength={todos.length} />
         <div className='rounded-md shadow-xl overflow-hidden'>
@@ -46,12 +46,15 @@ export const Main = () => {
             <ClearCompleted deleteCompletedTodos={deleteCompletedTodos} />
           </div>
         </div>
+        <p className='text-sm text-center text-placeholder-dark mt-14 mb-2'>Drag and drop to reorder list</p>
       </section>
-
-      <TodoFilter
-        setTodoFilter={setTodoFilter}
-        className='flex sm:flex-col gap-1 px-1 py-2 bg-primary-light dark:bg-primary-dark mt-4 sm:mt-0 rounded-md shadow-xl'
-      />
+      <section className='bg-primary-light dark:bg-primary-dark rounded-md shadow-xl max-w-[7rem] mb-[5.25rem]'>
+        <TodoFilter
+          setTodoFilter={setTodoFilter}
+          className='flex flex-wrap justify-center gap-1 p-1'
+          todos={todos}
+        />
+      </section>
     </main>
   )
 }

@@ -62,6 +62,9 @@ export function useTodo () {
     )
   }
 
+  // ToDo: Manejar el listado de nuevos parámetros de filtros para poder acceder a ellos
+  // ToDo: crear el drag and drop
+
   const todosList = todos.filter((todo) => {
     if (todoFilter === 'Completed') {
       return todo.completed
