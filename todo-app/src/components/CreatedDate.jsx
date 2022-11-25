@@ -1,19 +1,28 @@
-export const CreatedDate = ({ created, children }) => {
+import { Tags } from './Tags'
+
+export const CreatedDate = ({ created, completed }) => {
+  const timeElapsed = Math.floor((new Date() - created) / 1000 / 60 / 60 / 24)
+
   return (
-    <div className='justify-between items-center text-[.6rem] text-lm-4'>
-      <p>
-        <b>Created: </b>
-        {created.getDate()}/{created.getMonth() + 1}/{created.getFullYear()}{' '}
-        {created.getHours() < 10
-          ? '0' + created.getHours()
-          : created.getHours()}
-        :
-        {created.getMinutes() < 10
-          ? '0' + created.getMinutes()
-          : created.getMinutes()}
-        hrs
-      </p>
-      {children}
-    </div>
+    <Tags
+      className={
+        completed
+          ? 'bg-placeholder-light'
+          : timeElapsed < 24
+            ? 'bg-green-700'
+            : timeElapsed < 48
+              ? 'bg-yellow-500'
+              : 'bg-red-700'
+      }
+      text={
+        completed
+          ? 'Completed'
+          : timeElapsed < 24
+            ? 'Today'
+            : timeElapsed < 48
+              ? 'Yesterday'
+              : 'Since 2+ days'
+      }
+    />
   )
 }

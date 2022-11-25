@@ -2,33 +2,42 @@ import { CreatedDate } from './CreatedDate'
 import { ToggleCompletedButton } from './ToggleCompletedButton'
 import { DeleteTodoButton } from './DeleteTodoButton'
 import { TodoText } from './TodoText'
-import { LimitDate } from './LimitDate'
+import { TagInput } from './TagInput'
+import { Tags } from './Tags'
+import { DeleteTagButton } from './DeleteTagButton'
 
 export const TodoItem = ({
-  todo,
+  text,
   completed,
   created,
-  deadline,
+  tags,
   markAsComplete,
   deleteTodo,
-  toggleModal
+  addTag,
+  removeTag
 }) => {
   return (
-    <li className='grid grid-flow-col items-center justify-between w-full bg-white dark:bg-dm-6 px-5 py-3 border-b dark:border-dm-4'>
-      <div className='flex gap-4 items-center'>
-        <ToggleCompletedButton
-          completed={completed}
-          todoId={created}
-          callback={markAsComplete}
-        />
-        <div onClick={() => toggleModal()}>
-          <TodoText completed={completed} todo={todo} />
-          <CreatedDate created={created}>
-            {deadline > 0 && <LimitDate deadline={deadline} />}
-          </CreatedDate>
+    <li className='flex flex-col gap-1 w-full bg-primary-light dark:bg-primary-dark px-5 py-3 border-b border-bg-light dark:border-bg-dark'>
+      <div className='flex gap-2 items-center justify-between'>
+        <div className='flex gap-4 items-center'>
+          <ToggleCompletedButton
+            completed={completed}
+            todoId={created}
+            callback={markAsComplete}
+          />
+          <TodoText completed={completed} text={text} />
         </div>
+        <DeleteTodoButton todoId={created} callback={deleteTodo} />
       </div>
-      <DeleteTodoButton todoId={created} callback={deleteTodo} />
+      <ul className='flex gap-1 flex-wrap w-full ml-9'>
+        <CreatedDate created={created} completed={completed} />
+        {tags.map((tag, index) => (
+          <Tags key={index} text={tag} className='bg-slate-500'>
+            <DeleteTagButton removeTag={removeTag} text={tag} id={created} />
+          </Tags>
+        ))}
+        <TagInput id={created} addTag={addTag} />
+      </ul>
     </li>
   )
 }

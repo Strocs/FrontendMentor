@@ -1,18 +1,24 @@
 import { useState } from 'react'
 
 export function useTodo () {
+  const [todos, setTodos] = useState([
+    {
+      text: 'Terminar este Challenge',
+      completed: false,
+      tags: ['Work'],
+      created: new Date()
+    }
+  ])
+
   const [todoFilter, setTodoFilter] = useState('')
-  const [openModal, setOpenModal] = useState(false)
-  const [todos, setTodos] = useState([])
 
   const createTodo = (newTodo) => {
     setTodos([
       {
-        todo: newTodo,
+        text: newTodo,
         completed: false,
-        description: '',
-        created: new Date(),
-        deadline: 0
+        tags: [],
+        created: new Date()
       },
       ...todos
     ])
@@ -29,17 +35,31 @@ export function useTodo () {
   const markAsComplete = (id) => {
     setTodos(
       todos.map((todo) => {
-        if (todo.created === id) {
-          todo.completed = !todo.completed
-          return todo
-        }
+        if (todo.created !== id) return todo
+        todo.completed = !todo.completed
         return todo
       })
     )
   }
 
-  const toggleModal = () => {
-    setOpenModal(!openModal)
+  const addTag = (id, tag) => {
+    setTodos(
+      todos.map((todo) => {
+        if (todo.created !== id) return todo
+        if (todo.tags.includes(tag)) return todo
+        todo.tags = [...todo.tags, tag]
+        return todo
+      })
+    )
+  }
+  const removeTag = (id, tagText) => {
+    setTodos(
+      todos.map((todo) => {
+        if (todo.created !== id) return todo
+        todo.tags = todo.tags.filter(tag => tag !== tagText)
+        return todo
+      })
+    )
   }
 
   const todosList = todos.filter((todo) => {
@@ -59,7 +79,7 @@ export function useTodo () {
     deleteCompletedTodos,
     todosList,
     setTodoFilter,
-    openModal,
-    toggleModal
+    addTag,
+    removeTag
   }
 }

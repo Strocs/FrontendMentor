@@ -17,20 +17,20 @@ export const ToggleLightDark = () => {
   }
 
   return (
-    <div className='bg-white dark:bg-dm-6 flex gap-1 p-1 rounded-lg w-fit shadow-xl'>
+    <div className='bg-primary-light dark:bg-primary-dark flex gap-1 p-1 rounded-lg w-fit shadow-xl'>
       <LightDarkButton
         mode='Light'
         callback={enableLightMode}
         selected={selected}
       >
-        <Sun fill='fill-dm-4 dark:fill-lm-2 scale-[.6]' />
+        <Sun fill='fill-dark-extra dark:fill-bg-light scale-[.6]' />
       </LightDarkButton>
       <LightDarkButton
         mode='Dark'
         callback={enableDarkMode}
         selected={!selected}
       >
-        <Moon fill='fill-dm-4 dark:fill-lm-2 scale-[.6]' />
+        <Moon fill='fill-dark-extra dark:fill-bg-light scale-[.6]' />
       </LightDarkButton>
     </div>
   )

@@ -1,11 +1,13 @@
-export const TodoText = ({ completed, todo }) => {
+export const TodoText = ({ completed, text }) => {
   return (
     <p
-      className={`text-sm text-lm-5 dark:text-dm-2 ${
-        completed && 'text-lm-3 dark:text-dm-4 line-through'
+      className={`text-sm ${
+        completed
+          ? 'text-placeholder-dark dark:text-placeholder-dark line-through'
+          : 'text-primary-dark dark:text-primary-light'
       }`}
     >
-      {todo[0].toUpperCase() + todo.slice(1)}
+      {text}
     </p>
   )
 }
