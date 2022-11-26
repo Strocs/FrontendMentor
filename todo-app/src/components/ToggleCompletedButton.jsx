@@ -6,7 +6,7 @@ export const ToggleCompletedButton = ({
   return (
     <button
       type='button'
-      onClick={() => callback(todoId)}
+      onClick={() => callback !== null ? callback(todoId) : callback}
       className={`grid place-items-center h-5 w-5 rounded-full flex-shrink-0 ${
         completed
           ? 'bg-gradient-to-br from-Gradient-1 to-Gradient-2'

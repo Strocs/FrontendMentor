@@ -20,9 +20,7 @@ export const CreateTodoInput = ({ callback, todoLength }) => {
           className='w-full text-xs text-primary-dark dark:text-primary-light placeholder:text-xs placeholder:text-placeholder-light dark:placeholder:text-placeholder-dark bg-primary-light dark:bg-primary-dark outline-none'
           type='text'
           ref={newTodoRef}
-          placeholder={`Let's create ${
-            todoLength > 0 ? 'a new' : 'your first'
-          } todo!`}
+          placeholder='Let`s create a new todo!'
         />
       </form>
     </div>

@@ -2,14 +2,7 @@ import { useState } from 'react'
 import { useLocalStorage } from './useLocalStorage'
 
 export function useTodo () {
-  const [todos, setTodos] = useLocalStorage('todos', [
-    {
-      text: 'Terminar este Challenge',
-      completed: false,
-      tags: ['Work'],
-      created: Date.now()
-    }
-  ])
+  const [todos, setTodos] = useLocalStorage('todos', [])
   const [todoFilter, setTodoFilter] = useState('')
 
   // ToDo: crear el drag and drop
@@ -79,6 +72,7 @@ export function useTodo () {
       })
     )
   }
+
   const removeTag = (id, tagText) => {
     setTodos(
       todos.map((todo) => {

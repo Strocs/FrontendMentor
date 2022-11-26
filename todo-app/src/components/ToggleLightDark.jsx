@@ -7,7 +7,7 @@ export const ToggleLightDark = () => {
   const [darkMode, setDarkMode] = useDarkMode()
 
   return (
-    <div className='bg-primary-light dark:bg-primary-dark flex gap-1 p-1 rounded-lg w-fit shadow-xl'>
+    <>
       <LightDarkButton
         mode='Light'
         callback={setDarkMode}
@@ -24,6 +24,6 @@ export const ToggleLightDark = () => {
       >
         <Moon fill='fill-dark-extra dark:fill-bg-light scale-[.6]' />
       </LightDarkButton>
-    </div>
+    </>
   )
 }
