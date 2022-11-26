@@ -1,7 +1,7 @@
 {
-  "name": "@example/basics",
+  "name": "@frontendmentor/todo-app",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -13,6 +13,8 @@
   "dependencies": {
     "@astrojs/react": "^1.2.2",
     "@astrojs/tailwind": "^2.1.2",
+    "@dnd-kit/core": "^6.0.5",
+    "@dnd-kit/sortable": "^7.0.1",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
     "astro": "^1.6.10",

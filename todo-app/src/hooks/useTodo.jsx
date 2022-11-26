@@ -1,16 +1,43 @@
 import { useState } from 'react'
+import { useLocalStorage } from './useLocalStorage'
 
 export function useTodo () {
-  const [todos, setTodos] = useState([
+  const [todos, setTodos] = useLocalStorage('todos', [
     {
       text: 'Terminar este Challenge',
       completed: false,
       tags: ['Work'],
-      created: new Date()
+      created: Date.now()
     }
   ])
-
   const [todoFilter, setTodoFilter] = useState('')
+
+  // ToDo: crear el drag and drop
+
+  const tagSet = new Set(todos.map((todo) => todo.tags).flat())
+  const tagArray = []
+  tagSet.forEach((tag) => tagArray.push(tag))
+
+  // Filtered Array that is rendered
+  const todosList = todos.filter((todo) => {
+    if (todoFilter === 'Completed') {
+      return todo.completed
+    } else if (todoFilter === 'Active') {
+      return !todo.completed
+    } else if (tagArray.includes(todoFilter)) {
+      return todo.tags.includes(todoFilter)
+    }
+    return todo
+  })
+
+  const changeTodoOrder = (active, over, callback) => {
+    setTodos((todos) => {
+      const activeIndex = todos.findIndex((todo) => todo.created === active)
+      const overIndex = todos.findIndex((todo) => todo.created === over)
+
+      return callback(todos, activeIndex, overIndex)
+    })
+  }
 
   const createTodo = (newTodo) => {
     setTodos([
@@ -18,7 +45,7 @@ export function useTodo () {
         text: newTodo,
         completed: false,
         tags: [],
-        created: new Date()
+        created: Date.now()
       },
       ...todos
     ])
@@ -56,23 +83,11 @@ export function useTodo () {
     setTodos(
       todos.map((todo) => {
         if (todo.created !== id) return todo
-        todo.tags = todo.tags.filter(tag => tag !== tagText)
+        todo.tags = todo.tags.filter((tag) => tag !== tagText)
         return todo
       })
     )
   }
-
-  // ToDo: Manejar el listado de nuevos parámetros de filtros para poder acceder a ellos
-  // ToDo: crear el drag and drop
-
-  const todosList = todos.filter((todo) => {
-    if (todoFilter === 'Completed') {
-      return todo.completed
-    } else if (todoFilter === 'Active') {
-      return !todo.completed
-    }
-    return todo
-  })
 
   return {
     todos,
@@ -83,6 +98,8 @@ export function useTodo () {
     todosList,
     setTodoFilter,
     addTag,
-    removeTag
+    removeTag,
+    tagArray,
+    changeTodoOrder
   }
 }
