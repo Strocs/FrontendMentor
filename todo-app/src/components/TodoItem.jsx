@@ -14,12 +14,24 @@ export const TodoItem = ({
   markAsComplete,
   deleteTodo,
   addTag,
-  removeTag
+  removeTag,
+  isDragging,
+  handleDragging
 }) => {
+  const handleDragEnd = () => {
+    handleDragging(false)
+  }
+
+  const handleDragStart = (e) => {
+    e.dataTransfer.setData('text', `${created}`)
+    handleDragging(true)
+  }
   return (
     <li
       draggable
-      className='flex gap-2 items-center justify-between px-5 py-3 w-full bg-primary-light dark:bg-primary-dark border-b border-bg-light dark:border-bg-dark'
+      onDragEnd={handleDragEnd}
+      onDragStart={handleDragStart}
+      className={`flex gap-2 items-center justify-between px-5 py-3 w-full bg-primary-light dark:bg-primary-dark border-b border-bg-light dark:border-bg-dark ${isDragging ? 'opacity-25' : 'opacity-100'}`}
     >
       <div className='flex gap-4 items-center'>
         <ToggleCompletedButton

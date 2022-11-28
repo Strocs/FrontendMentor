@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { TodoItem } from './TodoItem'
 
 export const TodoList = ({
@@ -8,6 +9,10 @@ export const TodoList = ({
   todosList,
   changeTodoOrder
 }) => {
+  const [isDragging, setIsDragging] = useState(false)
+
+  const handleDragging = (dragging) => setIsDragging(dragging)
+
   return (
     <ul>
       {!!todosList && todosList.map((todo) => {
@@ -22,6 +27,8 @@ export const TodoList = ({
             deleteTodo={deleteTodo}
             addTag={addTag}
             removeTag={removeTag}
+            isDragging={isDragging}
+            handleDragging={handleDragging}
           />
         )
       })}

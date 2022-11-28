@@ -20,6 +20,7 @@ export const Main = () => {
     changeTodoOrder
   } = useTodo()
 
+  // const { tagArray } = useTag()
   return (
     <main className='w-full h-full max-w-2xl flex flex-col justify-between gap-4 sm:flex-row'>
       <section className='w-full'>
@@ -43,10 +44,7 @@ export const Main = () => {
         </p>
       </section>
       <section className='bg-primary-light dark:bg-primary-dark rounded-md shadow-xl py-2 px-1 max-w-[7rem] mb-[5.25rem]'>
-        <TodoFilter
-          setTodoFilter={setTodoFilter}
-          tagArray={tagArray}
-        />
+        <TodoFilter setTodoFilter={setTodoFilter} tagArray={tagArray} />
       </section>
     </main>
   )

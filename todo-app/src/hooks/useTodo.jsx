@@ -5,6 +5,7 @@ export function useTodo () {
   const [todos, setTodos] = useLocalStorage('todos', [])
   const [todoFilter, setTodoFilter] = useState('')
 
+  // const { tagArray } = useTag()
   // ToDo: crear el drag and drop
 
   const tagSet = new Set(todos.map((todo) => todo.tags).flat())
@@ -85,6 +86,7 @@ export function useTodo () {
 
   return {
     todos,
+    setTodos,
     createTodo,
     deleteTodo,
     markAsComplete,
