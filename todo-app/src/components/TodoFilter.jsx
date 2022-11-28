@@ -1,8 +1,8 @@
 import { FilterButton } from './FilterButton'
 
-export const TodoFilter = ({ setTodoFilter, className, tagArray }) => {
+export const TodoFilter = ({ setTodoFilter, tagArray }) => {
   return (
-    <div className={className}>
+    <div className='flex flex-wrap justify-center gap-1'>
       <FilterButton title='All' callback={setTodoFilter} />
       <FilterButton title='Active' callback={setTodoFilter} />
       <FilterButton title='Completed' callback={setTodoFilter} />

@@ -10,7 +10,7 @@ export const TodoList = ({
 }) => {
   return (
     <ul>
-      {todosList.map((todo) => {
+      {!!todosList && todosList.map((todo) => {
         return (
           <TodoItem
             key={todo.created}
@@ -25,6 +25,7 @@ export const TodoList = ({
           />
         )
       })}
+      {!todosList && <p>Loading...</p>}
     </ul>
   )
 }

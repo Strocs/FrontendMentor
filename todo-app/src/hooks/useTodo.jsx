@@ -66,8 +66,8 @@ export function useTodo () {
     setTodos(
       todos.map((todo) => {
         if (todo.created !== id) return todo
-        if (todo.tags.includes(tag)) return todo
-        todo.tags = [...todo.tags, tag]
+        if (todo.tags.includes(tag.toLowerCase())) return todo
+        todo.tags = [...todo.tags, tag.toLowerCase()]
         return todo
       })
     )
@@ -77,7 +77,7 @@ export function useTodo () {
     setTodos(
       todos.map((todo) => {
         if (todo.created !== id) return todo
-        todo.tags = todo.tags.filter((tag) => tag !== tagText)
+        todo.tags = todo.tags.filter((tag) => tag !== tagText.toLowerCase())
         return todo
       })
     )

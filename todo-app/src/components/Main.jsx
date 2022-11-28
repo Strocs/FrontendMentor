@@ -33,7 +33,6 @@ export const Main = () => {
             removeTag={removeTag}
             changeTodoOrder={changeTodoOrder}
           />
-          {/* {todos.length === 0 && <LoadingTodo />} */}
           <div className='flex bg-primary-light dark:bg-primary-dark p-5 justify-between items-center text-xs text-placeholder-dark dark:text-placeholder-light'>
             <ItemsLeft todos={todos} />
             <ClearCompleted deleteCompletedTodos={deleteCompletedTodos} />
@@ -43,10 +42,9 @@ export const Main = () => {
           Drag and drop to reorder list
         </p>
       </section>
-      <section className='bg-primary-light dark:bg-primary-dark rounded-md shadow-xl max-w-[7rem] mb-[5.25rem]'>
+      <section className='bg-primary-light dark:bg-primary-dark rounded-md shadow-xl py-2 px-1 max-w-[7rem] mb-[5.25rem]'>
         <TodoFilter
           setTodoFilter={setTodoFilter}
-          className='flex flex-wrap justify-center gap-1 p-1'
           tagArray={tagArray}
         />
       </section>

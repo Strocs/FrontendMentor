@@ -19,30 +19,34 @@ export const TodoItem = ({
   return (
     <li
       draggable
-      className='flex flex-col gap-1 px-5 py-3 w-full bg-primary-light dark:bg-primary-dark border-b border-bg-light dark:border-bg-dark'
+      className='flex gap-2 items-center justify-between px-5 py-3 w-full bg-primary-light dark:bg-primary-dark border-b border-bg-light dark:border-bg-dark'
     >
-      <div className='flex gap-2 items-center justify-between'>
-        <div className='flex gap-4 items-center'>
-          <ToggleCompletedButton
-            completed={completed}
-            todoId={created}
-            callback={markAsComplete}
-          />
+      <div className='flex gap-4 items-center'>
+        <ToggleCompletedButton
+          completed={completed}
+          todoId={created}
+          callback={markAsComplete}
+        />
+        <div className='flex flex-col gap-1'>
           <TodoText completed={completed} text={text} />
+          <ul className='flex gap-1 flex-wrap w-full'>
+            <CreatedDate created={created} completed={completed} />
+            {tags.map((tag, index) => (
+              <Tags key={index} text={tag} className='bg-slate-500'>
+                <DeleteTagButton
+                  removeTag={removeTag}
+                  text={tag}
+                  id={created}
+                />
+              </Tags>
+            ))}
+            <li>
+              <TagInput id={created} addTag={addTag} />
+            </li>
+          </ul>
         </div>
-        <DeleteTodoButton todoId={created} callback={deleteTodo} />
       </div>
-      <ul className='flex gap-1 flex-wrap w-full ml-9'>
-        <CreatedDate created={created} completed={completed} />
-        {tags.map((tag, index) => (
-          <Tags key={index} text={tag} className='bg-slate-500'>
-            <DeleteTagButton removeTag={removeTag} text={tag} id={created} />
-          </Tags>
-        ))}
-        <li>
-          <TagInput id={created} addTag={addTag} />
-        </li>
-      </ul>
+      <DeleteTodoButton todoId={created} callback={deleteTodo} />
     </li>
   )
 }
