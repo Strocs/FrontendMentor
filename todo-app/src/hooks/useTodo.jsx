@@ -1,39 +1,27 @@
-import { useState } from 'react'
 import { useLocalStorage } from './useLocalStorage'
 
 export function useTodo () {
   const [todos, setTodos] = useLocalStorage('todos', [])
-  const [todoFilter, setTodoFilter] = useState('')
+  const tagSet = new Set(todos.map(todo => todo.tags).flat())
+  const tagArray = [...tagSet]
 
-  // const { tagArray } = useTag()
-  // ToDo: crear el drag and drop
-
-  const tagSet = new Set(todos.map((todo) => todo.tags).flat())
-  const tagArray = []
-  tagSet.forEach((tag) => tagArray.push(tag))
-
-  // Filtered Array that is rendered
-  const todosList = todos.filter((todo) => {
-    if (todoFilter === 'Completed') {
-      return todo.completed
-    } else if (todoFilter === 'Active') {
-      return !todo.completed
-    } else if (tagArray.includes(todoFilter)) {
-      return todo.tags.includes(todoFilter)
+  const reorderTodos = result => {
+    const { source, destination } = result
+    console.log(result)
+    if (!destination) return
+    if (
+      source.index === destination.index &&
+      source.droppableId === destination.droppableId
+    ) {
+      return
     }
-    return todo
-  })
-
-  const changeTodoOrder = (active, over, callback) => {
-    setTodos((todos) => {
-      const activeIndex = todos.findIndex((todo) => todo.created === active)
-      const overIndex = todos.findIndex((todo) => todo.created === over)
-
-      return callback(todos, activeIndex, overIndex)
-    })
+    const copyTodos = [...todos]
+    const [removed] = copyTodos.splice(source.index, 1)
+    copyTodos.splice(destination.index, 0, removed)
+    setTodos(copyTodos)
   }
 
-  const createTodo = (newTodo) => {
+  const createTodo = newTodo => {
     setTodos([
       {
         text: newTodo,
@@ -45,17 +33,17 @@ export function useTodo () {
     ])
   }
 
-  const deleteTodo = (id) => {
-    setTodos(todos.filter((todo) => todo.created !== id))
+  const deleteTodo = id => {
+    setTodos(todos.filter(todo => todo.created !== id))
   }
 
   const deleteCompletedTodos = () => {
-    setTodos(todos.filter((todo) => !todo.completed))
+    setTodos(todos.filter(todo => !todo.completed))
   }
 
-  const markAsComplete = (id) => {
+  const markAsComplete = id => {
     setTodos(
-      todos.map((todo) => {
+      todos.map(todo => {
         if (todo.created !== id) return todo
         todo.completed = !todo.completed
         return todo
@@ -65,7 +53,7 @@ export function useTodo () {
 
   const addTag = (id, tag) => {
     setTodos(
-      todos.map((todo) => {
+      todos.map(todo => {
         if (todo.created !== id) return todo
         if (todo.tags.includes(tag.toLowerCase())) return todo
         todo.tags = [...todo.tags, tag.toLowerCase()]
@@ -76,9 +64,9 @@ export function useTodo () {
 
   const removeTag = (id, tagText) => {
     setTodos(
-      todos.map((todo) => {
+      todos.map(todo => {
         if (todo.created !== id) return todo
-        todo.tags = todo.tags.filter((tag) => tag !== tagText.toLowerCase())
+        todo.tags = todo.tags.filter(tag => tag !== tagText.toLowerCase())
         return todo
       })
     )
@@ -91,11 +79,9 @@ export function useTodo () {
     deleteTodo,
     markAsComplete,
     deleteCompletedTodos,
-    todosList,
-    setTodoFilter,
     addTag,
     removeTag,
     tagArray,
-    changeTodoOrder
+    reorderTodos
   }
 }

@@ -18,7 +18,7 @@ export const CreatedDate = ({ created, completed }) => {
         completed
           ? 'Completed'
           : timeElapsed < 24
-            ? 'Today'
+            ? 'Less than 24hrs'
             : timeElapsed < 48
               ? 'Yesterday'
               : 'Since 2+ days'
