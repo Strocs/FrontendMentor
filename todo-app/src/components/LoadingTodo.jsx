@@ -1,4 +1,4 @@
-import { ToggleCompletedButton } from './ToggleCompletedButton'
+import { ToggleCompletedButton } from './'
 
 export const LoadingTodo = () => {
   return (

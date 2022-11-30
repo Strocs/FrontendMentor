@@ -1,10 +1,10 @@
-import { Tags } from './Tags'
+import { TagItem } from './'
 
 export const CreatedDate = ({ created, completed }) => {
   const timeElapsed = Math.floor((new Date() - created) / 1000 / 60 / 60 / 24)
 
   return (
-    <Tags
+    <TagItem
       className={
         completed
           ? 'bg-placeholder-light'

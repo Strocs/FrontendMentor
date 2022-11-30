@@ -1,18 +1,13 @@
 ---
 import { Main } from '../components/Main'
-import { ToggleLightDark } from '../components/ToggleLightDark'
+import Header from '../components/Header.astro'
 import Layout from '../layouts/Layout.astro'
+import Instructions from '../components/Instructions.astro';
 ---
 
 <Layout title='Simple toDo_ | Frontend Mentor'>
-	<header class='flex gap-2 justify-between items-center py-8 w-full max-w-2xl'>
-		<div class='text-dark-extra dark:text-primary-light'>
-			<h1 class='text-3xl font-bold inline-block leading-6'>Simple toDo_</h1>
-			<span class='text-xs'>by Strocs.</span>
-		</div>
-		<div class='bg-primary-light h-10 w-44 dark:bg-primary-dark flex items-center justify-center gap-1 p-1 rounded-lg shadow-xl'>
-			<ToggleLightDark client:only />
-		</div>
-	</header>
-	<Main client:load />
+	<Header />
+	<Main client:load>
+		<Instructions />
+	</Main>
 </Layout>

@@ -1,4 +1,4 @@
-import { useLocalStorage } from './useLocalStorage'
+import { useLocalStorage } from './'
 
 export function useTodo () {
   const [todos, setTodos] = useLocalStorage('todos', [])
@@ -7,7 +7,6 @@ export function useTodo () {
 
   const reorderTodos = result => {
     const { source, destination } = result
-    console.log(result)
     if (!destination) return
     if (
       source.index === destination.index &&
@@ -37,11 +36,11 @@ export function useTodo () {
     setTodos(todos.filter(todo => todo.created !== id))
   }
 
-  const deleteCompletedTodos = () => {
+  const deleteCompleted = () => {
     setTodos(todos.filter(todo => !todo.completed))
   }
 
-  const markAsComplete = id => {
+  const toggleCompleted = id => {
     setTodos(
       todos.map(todo => {
         if (todo.created !== id) return todo
@@ -51,22 +50,22 @@ export function useTodo () {
     )
   }
 
-  const addTag = (id, tag) => {
+  const addTag = (id, tagId) => {
     setTodos(
       todos.map(todo => {
         if (todo.created !== id) return todo
-        if (todo.tags.includes(tag.toLowerCase())) return todo
-        todo.tags = [...todo.tags, tag.toLowerCase()]
+        if (todo.tags.includes(tagId.toLowerCase())) return todo
+        todo.tags = [...todo.tags, tagId.toLowerCase()]
         return todo
       })
     )
   }
 
-  const removeTag = (id, tagText) => {
+  const removeTag = (id, tagId) => {
     setTodos(
       todos.map(todo => {
         if (todo.created !== id) return todo
-        todo.tags = todo.tags.filter(tag => tag !== tagText.toLowerCase())
+        todo.tags = todo.tags.filter(tag => tag !== tagId.toLowerCase())
         return todo
       })
     )
@@ -77,8 +76,8 @@ export function useTodo () {
     setTodos,
     createTodo,
     deleteTodo,
-    markAsComplete,
-    deleteCompletedTodos,
+    toggleCompleted,
+    deleteCompleted,
     addTag,
     removeTag,
     tagArray,

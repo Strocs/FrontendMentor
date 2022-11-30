@@ -1,17 +1,19 @@
-import { CreatedDate } from './CreatedDate'
-import { ToggleCompletedButton } from './ToggleCompletedButton'
-import { DeleteTodoButton } from './DeleteTodoButton'
-import { TodoText } from './TodoText'
-import { TagInput } from './TagInput'
-import { Tags } from './Tags'
-import { DeleteTagButton } from './DeleteTagButton'
 import { Draggable } from '@hello-pangea/dnd'
+import {
+  CreatedDate,
+  ToggleCompletedButton,
+  DeleteTodo,
+  CreateTag,
+  TagItem,
+  DeleteTag
+} from './'
+
 export const TodoItem = ({
   text,
   completed,
   created,
   tags,
-  markAsComplete,
+  toggleCompleted,
   deleteTodo,
   addTag,
   removeTag,
@@ -30,28 +32,32 @@ export const TodoItem = ({
             <ToggleCompletedButton
               completed={completed}
               todoId={created}
-              callback={markAsComplete}
+              toggleCompleted={toggleCompleted}
             />
             <div className='flex flex-col gap-1'>
-              <TodoText completed={completed} text={text} />
+              <p
+                className={`text-sm ${
+                  completed
+                    ? 'text-placeholder-dark dark:text-placeholder-dark line-through'
+                    : 'text-primary-dark dark:text-primary-light'
+                }`}
+              >
+                {text}
+              </p>
               <ul className='flex gap-1 flex-wrap w-full'>
                 <CreatedDate created={created} completed={completed} />
                 {tags.map((tag, index) => (
-                  <Tags key={index} text={tag} className='bg-slate-500'>
-                    <DeleteTagButton
-                      removeTag={removeTag}
-                      text={tag}
-                      id={created}
-                    />
-                  </Tags>
+                  <TagItem key={index} text={tag} className='bg-slate-500'>
+                    <DeleteTag removeTag={removeTag} text={tag} id={created} />
+                  </TagItem>
                 ))}
                 <li>
-                  <TagInput id={created} addTag={addTag} />
+                  <CreateTag id={created} addTag={addTag} />
                 </li>
               </ul>
             </div>
           </div>
-          <DeleteTodoButton todoId={created} callback={deleteTodo} />
+          <DeleteTodo todoId={created} deleteTodo={deleteTodo} />
         </li>
       )}
     </Draggable>

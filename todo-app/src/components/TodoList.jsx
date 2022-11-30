@@ -1,24 +1,24 @@
-// import { useState } from 'react'
 import { useEffect, useState } from 'react'
-import { LoadingTodo } from './LoadingTodo'
-import { TodoItem } from './TodoItem'
 import { DragDropContext, Droppable } from '@hello-pangea/dnd'
+import { FilteredTodos } from './helpers'
+import { LoadingTodo, TodoItem } from './'
+
 export const TodoList = ({
-  markAsComplete,
+  toggleCompleted,
   deleteTodo,
   addTag,
   removeTag,
   todos,
   reorderTodos,
-  todoFilter,
   tagArray,
-  FilteredComponent
+  filter
 }) => {
   const [hasMounted, setHasMounted] = useState(false)
+
   useEffect(() => {
     setHasMounted(true)
   }, [])
-
+  console.log('TodoList')
   return (
     <DragDropContext onDragEnd={result => reorderTodos(result)}>
       <Droppable droppableId='todos'>
@@ -27,89 +27,26 @@ export const TodoList = ({
             {...droppableProvided.droppableProps}
             ref={droppableProvided.innerRef}
           >
-            {todos.map((todo, index) => {
-              // FilteredComponent(
-              //   <TodoItem
-              //     index={index}
-              //     key={todo.created}
-              //     text={todo.text}
-              //     completed={todo.completed}
-              //     created={todo.created}
-              //     tags={todo.tags}
-              //     markAsComplete={markAsComplete}
-              //     deleteTodo={deleteTodo}
-              //     addTag={addTag}
-              //     removeTag={removeTag}
-              //   />,
-              //   todo
-              // )
-              // return null
-              if (todoFilter === 'Completed' && todo.completed) {
-                return (
-                  <TodoItem
-                    index={index}
-                    key={todo.created}
-                    text={todo.text}
-                    completed={todo.completed}
-                    created={todo.created}
-                    tags={todo.tags}
-                    markAsComplete={markAsComplete}
-                    deleteTodo={deleteTodo}
-                    addTag={addTag}
-                    removeTag={removeTag}
-                  />
-                )
-              } else if (todoFilter === 'Active' && !todo.completed) {
-                return (
-                  <TodoItem
-                    index={index}
-                    key={todo.created}
-                    text={todo.text}
-                    completed={todo.completed}
-                    created={todo.created}
-                    tags={todo.tags}
-                    markAsComplete={markAsComplete}
-                    deleteTodo={deleteTodo}
-                    addTag={addTag}
-                    removeTag={removeTag}
-                  />
-                )
-              } else if (
-                tagArray.includes(todoFilter) &&
-                todo.tags.includes(todoFilter)
-              ) {
-                return (
-                  <TodoItem
-                    index={index}
-                    key={todo.created}
-                    text={todo.text}
-                    completed={todo.completed}
-                    created={todo.created}
-                    tags={todo.tags}
-                    markAsComplete={markAsComplete}
-                    deleteTodo={deleteTodo}
-                    addTag={addTag}
-                    removeTag={removeTag}
-                  />
-                )
-              } else if (todoFilter === 'All' || todoFilter === '') {
-                return (
-                  <TodoItem
-                    index={index}
-                    key={todo.created}
-                    text={todo.text}
-                    completed={todo.completed}
-                    created={todo.created}
-                    tags={todo.tags}
-                    markAsComplete={markAsComplete}
-                    deleteTodo={deleteTodo}
-                    addTag={addTag}
-                    removeTag={removeTag}
-                  />
-                )
-              }
-              return null
-            })}
+            {todos.map((todo, index) => (
+              <FilteredTodos
+                key={todo.created}
+                todo={todo}
+                filter={filter}
+                tagArray={tagArray}
+              >
+                <TodoItem
+                  index={index}
+                  text={todo.text}
+                  completed={todo.completed}
+                  created={todo.created}
+                  tags={todo.tags}
+                  toggleCompleted={toggleCompleted}
+                  deleteTodo={deleteTodo}
+                  addTag={addTag}
+                  removeTag={removeTag}
+                />
+              </FilteredTodos>
+            ))}
 
             {droppableProvided.placeholder}
             {!hasMounted && <LoadingTodo />}
