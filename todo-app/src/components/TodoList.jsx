@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react'
 import { DragDropContext, Droppable } from '@hello-pangea/dnd'
 import { FilteredTodos } from './helpers'
-import { LoadingTodo, TodoItem } from './'
+import { TodoItem } from './'
 
 export const TodoList = ({
   toggleCompleted,
@@ -13,12 +12,6 @@ export const TodoList = ({
   tagArray,
   filter
 }) => {
-  const [hasMounted, setHasMounted] = useState(false)
-
-  useEffect(() => {
-    setHasMounted(true)
-  }, [])
-  console.log('TodoList')
   return (
     <DragDropContext onDragEnd={result => reorderTodos(result)}>
       <Droppable droppableId='todos'>
@@ -47,9 +40,7 @@ export const TodoList = ({
                 />
               </FilteredTodos>
             ))}
-
             {droppableProvided.placeholder}
-            {!hasMounted && <LoadingTodo />}
           </ul>
         )}
       </Droppable>

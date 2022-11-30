@@ -20,7 +20,6 @@ export const Main = ({ children }) => {
     reorderTodos
   } = useTodo()
   const { setFilter, filter } = useFilterTodos()
-  console.log('Main')
   return (
     <main className='w-full h-full max-w-2xl flex flex-col justify-between gap-4 sm:flex-row relative'>
       <div className='w-full'>
