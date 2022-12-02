@@ -10,11 +10,7 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -34,12 +30,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./Captura.PNG)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Repository](https://github.com/Strocs/FrontendMentor/tree/main/todo-app)
+- Live Site URL: [Simple ToDo](https://simpletodo-strocs.vercel.app/)
 
 ## My process
 
@@ -48,13 +44,13 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
 - [Astro](https://astro.build/) - JS library
 - [React](https://reactjs.org/) - JS library
 
 ## Author
 
-- Website - [Strocs](https://www.your-site.com)
-- Frontend Mentor - [@Strocs](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@Strocs](https://www.twitter.com/yourusername)
+- Website - [Strocs](https://github.com/Strocs)
+- Frontend Mentor - [@Strocs](https://www.frontendmentor.io/profile/Strocs)
+- Twitter - [@_Strocs](https://twitter.com/_Strocs)
+- Instagram - [@_Strocs](https://instagram.com/_Strocs)
