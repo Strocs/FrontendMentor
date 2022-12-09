@@ -1,3 +1,3 @@
-export const Price = ({yearSubs, price, isPlan}) => {
+export const PriceText = ({yearSubs, price, isPlan}) => {
   return <>{isPlan ? '$' : '+$'}{price}{yearSubs ? '/yr' : '/mo'}</>
 }

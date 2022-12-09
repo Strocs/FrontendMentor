@@ -12,7 +12,7 @@ import { paths } from './'
 export const Router = () => {
   const { personal, planSelection, addonPicker, summary, success } = paths
 
-  const { name, email, phone, plan, yearSubs, addons, onInputChange, formState } = useForm(
+  const { name, email, phone, plan, yearSubs, addons, onInputChange } = useForm(
     {
       name: '',
       email: '',
@@ -48,9 +48,20 @@ export const Router = () => {
       />
       <Route
         path={addonPicker}
-        element={<AddOnPage addons={addons} yearSubs={yearSubs} onInputChange={onInputChange} />}
+        element={
+          <AddOnPage
+            addons={addons}
+            yearSubs={yearSubs}
+            onInputChange={onInputChange}
+          />
+        }
       />
-      <Route path={summary} element={<SummaryPage plan={plan} yearSubs={yearSubs} addons={addons} />} />
+      <Route
+        path={summary}
+        element={
+          <SummaryPage plan={plan} yearSubs={yearSubs} addons={addons} />
+        }
+      />
       <Route path={success} element={<SuccessPage />} />
       <Route path='/*' element={<Navigate to={personal} />} />
     </Routes>
