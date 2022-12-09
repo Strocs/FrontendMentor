@@ -2,7 +2,7 @@ export const PlanCard = ({
   title = '',
   price = '',
   image,
-  isYearly,
+  yearSubs,
   plan = '',
   onSelectPlan
 }) => {
@@ -22,7 +22,7 @@ export const PlanCard = ({
           {title}
         </h2>
         <p className='text-Cool-gray text-sm'>{price}</p>
-        {isYearly && (
+        {yearSubs && (
           <p className='text-Marine-blue text-xs leading-none font-medium'>
             2 months free
           </p>

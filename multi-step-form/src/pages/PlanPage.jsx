@@ -1,14 +1,13 @@
-import { useState } from 'react'
 import { PlanCard, ToggleButton, HeaderLayout, PlanIcon } from '../components'
-export const PlanPage = () => {
-  const [isYearly, setIsYearly] = useState(false)
-  const [plan, setPlan] = useState('')
-  const onToggle = () => {
-    setIsYearly(!isYearly)
+export const PlanPage = ({ plan, yearSubs, onInputChange }) => {
+
+  const onToggle = yearly => {
+    onInputChange({ target: { name: 'yearSubs', value: yearly } })
   }
   const onSelectPlan = planName => {
-    setPlan(planName)
+    onInputChange({ target: { name: 'plan', value: planName } })
   }
+
   return (
     <>
       <HeaderLayout
@@ -18,8 +17,8 @@ export const PlanPage = () => {
       <div className='flex flex-col gap-2'>
         <PlanCard
           title='Arcade'
-          price={isYearly ? '$90/yr' : '$9/mo'}
-          isYearly={isYearly}
+          price={yearSubs ? '$90/yr' : '$9/mo'}
+          yearSubs={yearSubs}
           plan={plan}
           onSelectPlan={onSelectPlan}
           image={<PlanIcon svgName='icon-arcade' />}
@@ -27,22 +26,22 @@ export const PlanPage = () => {
 
         <PlanCard
           title='Advanced'
-          price={isYearly ? '$120/yr' : '$12/mo'}
-          isYearly={isYearly}
+          price={yearSubs ? '$120/yr' : '$12/mo'}
+          yearSubs={yearSubs}
           plan={plan}
           onSelectPlan={onSelectPlan}
           image={<PlanIcon svgName='icon-advanced' />}
         />
         <PlanCard
           title='Pro'
-          price={isYearly ? '$150/yr' : '$15/mo'}
-          isYearly={isYearly}
+          price={yearSubs ? '$150/yr' : '$15/mo'}
+          yearSubs={yearSubs}
           plan={plan}
           onSelectPlan={onSelectPlan}
           image={<PlanIcon svgName={'icon-pro'} />}
         />
       </div>
-      <ToggleButton isYearly={isYearly} onToggle={onToggle} />
+      <ToggleButton yearSubs={yearSubs} onToggle={onToggle} />
     </>
   )
 }
