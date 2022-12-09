@@ -1,8 +1,8 @@
-import { StepCircle, StepLayout } from '../components'
+import { StepCircle, StepLayout } from './'
 
-export const AsideNav = () => {
+export const StepsList = () => {
   return (
-    <aside className='flex justify-center p-8 pb-24 gap-4 bg-sidebar-mobile bg-Purplish-blue'>
+    <ul className='py-8 flex justify-center gap-4'>
       <StepLayout>
         <StepCircle path='subscription/personal-info' step='1' />
       </StepLayout>
@@ -15,6 +15,6 @@ export const AsideNav = () => {
       <StepLayout>
         <StepCircle path='subscription/summary' step='4' />
       </StepLayout>
-    </aside>
+    </ul>
   )
 }

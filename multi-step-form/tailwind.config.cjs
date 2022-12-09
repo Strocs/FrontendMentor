@@ -17,7 +17,8 @@ module.exports = {
       'Cool-gray': 'hsl(231, 11%, 63%)',
       'Light-gray': 'hsl(229, 24%, 87%)',
       Magnolia: 'hsl(215, 100%, 97%)',
-      Alabaster: 'hsl(231, 100%, 99%)'
+      Alabaster: 'hsl(231, 100%, 99%)',
+      White: 'hsl(255, 100%,100%)',
     }
   },
   plugins: []

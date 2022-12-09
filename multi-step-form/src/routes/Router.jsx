@@ -1,15 +1,23 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { AddOnPage, InfoPage, PlanPage, SummaryPage, ThankYouPage } from '../pages'
+import {
+  AddOnPage,
+  InfoPage,
+  PlanPage,
+  SummaryPage,
+  SuccessPage
+} from '../pages'
+import { paths } from './'
 
 export const Router = () => {
+  const { personal, plans, addons, summary, success } = paths
   return (
     <Routes>
-      <Route path='subscription/personal-info' element={<InfoPage />} />
-      <Route path='subscription/plan-selection' element={<PlanPage />} />
-      <Route path='subscription/addon-picker' element={<AddOnPage />} />
-      <Route path='subscription/summary' element={<SummaryPage />} />
-      <Route path='subscription/thank-you' element={<ThankYouPage />} />
-      <Route path='/*' element={<Navigate to='subscription/personal-info' />} />
+      <Route path={personal} element={<InfoPage />} />
+      <Route path={plans} element={<PlanPage />} />
+      <Route path={addons} element={<AddOnPage />} />
+      <Route path={summary} element={<SummaryPage />} />
+      <Route path={success} element={<SuccessPage />} />
+      <Route path='/*' element={<Navigate to={personal} />} />
     </Routes>
   )
 }
