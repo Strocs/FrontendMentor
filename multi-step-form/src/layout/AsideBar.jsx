@@ -4,13 +4,13 @@ import { useChangePages } from '../hooks'
 export const AsideBar = () => {
   const { currentLocation, success } = useChangePages()
   return (
-    <aside className='w-full relative'>
-      <picture className='absolute -z-10 sm:z-0 sm:h-full w-full'>
+    <aside className='sm:h-full relative'>
+      <picture className='absolute -z-10 sm:static sm:h-full'>
         <source
           media='(min-width: 650px)'
           srcSet='/images/bg-sidebar-desktop.svg'
         />
-        <img className='w-full' src='/images/bg-sidebar-mobile.svg' />
+        <img className='sm:h-full' src='/images/bg-sidebar-mobile.svg' />
       </picture>
       {currentLocation !== success ? (
         <StepsList />

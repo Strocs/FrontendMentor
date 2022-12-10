@@ -14,7 +14,7 @@ export const PlanPage = ({ plan, yearSubs, onInputChange }) => {
         title='Select your plan'
         description='You have the option of monthly or yearly billing.'
       />
-      <div className='flex flex-col gap-2'>
+      <div className='flex flex-col sm:flex-row sm:justify-around gap-2 sm:gap-4'>
         <PlanCard
           title='Arcade'
           price={yearSubs ? '$90/yr' : '$9/mo'}

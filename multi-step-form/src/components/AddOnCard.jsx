@@ -9,8 +9,8 @@ export const AddOnCard = ({
   return (
     <div
       onClick={() => onSelection(name)}
-      className={`flex items-center justify-start border cursor-pointer rounded-lg py-2 px-4 gap-4 w-full ${
-        isActive ? 'border-Purplish-blue bg-Magnolia' : 'border-Light-gray'
+      className={`flex items-center justify-start border cursor-pointer rounded-lg py-2 px-4 gap-4 w-full sm:py-5 sm:px-6 sm:gap-6 ${
+        isActive ? 'border-Marine-blue-light bg-Alabaster' : 'border-Light-gray'
       }`}
     >
       <div className='relative h-5 w-5'>
@@ -26,10 +26,10 @@ export const AddOnCard = ({
         )}
       </div>
       <div className='w-max text-left'>
-        <h2 className='text-Marine-blue font-medium text-md'>{name}</h2>
-        <p className='text-Cool-gray text-xs'>{description}</p>
+        <h2 className='text-Marine-blue font-medium sm:text-lg'>{name}</h2>
+        <p className='text-Cool-gray text-xs sm:text-sm'>{description}</p>
       </div>
-      <span className='text-Purplish-blue text-xs font-medium ml-auto'>
+      <span className='text-Purplish-blue text-xs sm:text-sm font-medium ml-auto'>
         {price}
       </span>
     </div>

@@ -7,7 +7,7 @@ export const InfoPage = ({name, email, phone, onInputChange}) => {
         title='Personal Info'
         description='Please provide your name, email address, and phone number.'
       />
-      <div className='flex flex-col gap-4'>
+      <div className='flex flex-col gap-4 sm:gap-6'>
         <Input
           label='Name'
           placeholder='e.g. Stephen King'

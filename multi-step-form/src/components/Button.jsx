@@ -2,16 +2,16 @@ export const Button = ({ content = '', onClick }) => {
   return (
     <button
       onClick={onClick}
-      className={`px-4 py-2 text-sm rounded-sm
+      className={`py-2 w-24 sm:w-32 sm:py-3 text-sm sm:text-base rounded sm:rounded-lg
       ${
         content === 'Next Step'
-          ? 'bg-Marine-blue text-White justify-self-end'
+          ? 'bg-Marine-blue hover:bg-Marine-blue-light text-White justify-self-end'
           : ''
       }
-      ${content === 'Go Back' ? 'text-Cool-gray justify-self-start font-bold' : ''}
+      ${content === 'Go Back' ? 'text-Cool-gray justify-self-start font-bold w-auto hover:text-Marine-blue-light' : ''}
       ${
         content === 'Confirm'
-          ? 'bg-Purplish-blue text-White justify-self-end'
+          ? 'bg-Purplish-blue hover:bg-Purplish-blue-light text-White justify-self-end'
           : ''
       }
       `}

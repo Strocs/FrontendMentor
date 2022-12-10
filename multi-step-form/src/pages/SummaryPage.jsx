@@ -13,20 +13,20 @@ export const SummaryPage = ({ plan, yearSubs, addons }) => {
         title='Finishing Up'
         description='Double-check everything looks OK before confirming.'
       />
-      <div className='bg-Magnolia px-4 py-5 rounded-lg'>
+      <div className='bg-Alabaster px-4 py-5 rounded-lg sm:px-7 sm:py-6'>
         <div className='border-b border-Light-gray flex justify-between items-center pb-2'>
           <div>
-            <h2 className='text-Marine-blue font-bold text-sm leading-3'>
+            <h2 className='text-Marine-blue-light font-bold text-sm sm:text-base leading-3'>
               {plan} <span>({yearSubs ? 'Yearly' : 'Monthly'})</span>
             </h2>
             <Link
-              className='text-Cool-gray text-sm underline'
+              className='text-Cool-gray text-sm underline hover:text-Marine-blue-light'
               to={planSelection}
             >
               Change
             </Link>
           </div>
-          <span className='font-bold text-sm text-Marine-blue'>
+          <span className='font-bold text-sm text-Marine-blue-light sm:text-base'>
             <PriceText price={planPrice} yearSubs={yearSubs} isPlan={true} />
           </span>
         </div>
@@ -45,11 +45,11 @@ export const SummaryPage = ({ plan, yearSubs, addons }) => {
           ))}
         </ul>
       </div>
-      <div className='flex justify-between items-center px-4 pt-5'>
+      <div className='flex justify-between items-center px-4 pt-5 sm:px-7 sm:py-6'>
         <p className='text-Cool-gray text-sm'>
           Total (per {yearSubs ? 'year' : 'month'})
         </p>
-        <span className='text-Purplish-blue font-bold text-lg'>
+        <span className='text-Purplish-blue font-bold text-lg sm:text-xl'>
           <PriceText price={totalPrice} yearSubs={yearSubs} isPlan={false} />
         </span>
       </div>
