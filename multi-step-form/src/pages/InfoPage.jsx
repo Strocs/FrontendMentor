@@ -1,9 +1,13 @@
-import { Input, HeaderLayout } from '../components'
+import { useContext } from 'react'
+import { Input, Header } from '../components'
+import { FormContext } from '../context/formContext'
 
-export const InfoPage = ({name, email, phone, onInputChange}) => {
+export const InfoPage = () => {
+  const { name, email, phone, onChangeValues, errors } = useContext(FormContext)
+
   return (
     <>
-      <HeaderLayout
+      <Header
         title='Personal Info'
         description='Please provide your name, email address, and phone number.'
       />
@@ -14,7 +18,8 @@ export const InfoPage = ({name, email, phone, onInputChange}) => {
           type='text'
           name='name'
           value={name}
-          onInputChange={onInputChange}
+          onChangeValues={onChangeValues}
+          error={errors.name}
         />
         <Input
           label='Email Address'
@@ -22,7 +27,8 @@ export const InfoPage = ({name, email, phone, onInputChange}) => {
           type='email'
           name='email'
           value={email}
-          onInputChange={onInputChange}
+          onChangeValues={onChangeValues}
+          error={errors.email}
         />
         <Input
           label='Phone Number'
@@ -30,7 +36,8 @@ export const InfoPage = ({name, email, phone, onInputChange}) => {
           type='phone'
           name='phone'
           value={phone}
-          onInputChange={onInputChange}
+          onChangeValues={onChangeValues}
+          error={errors.phone}
         />
       </div>
     </>

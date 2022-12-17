@@ -1,4 +1,4 @@
-export const StepLayout = ({ children, step = 0, stepName = 'Default Page' }) => {
+export const StepItem = ({ children, step = 0, stepName = 'Default Page' }) => {
   return (
     <li className="sm:flex sm:items-center sm:gap-4">
       {children}

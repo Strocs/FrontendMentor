@@ -1,28 +1,10 @@
-import { useLocation, useNavigate } from 'react-router-dom'
-import { paths } from '../routes'
+import { useNavigate } from 'react-router-dom'
 
-export const useChangePages = () => {
-  const location = useLocation()
+export const useChangePages = (nextPage, afterSubmitPage) => {
   const navigation = useNavigate()
-  const { personal, planSelection, addonPicker, summary, success } = paths
-
-  let path = '/'
-  switch (location.pathname) {
-    case personal:
-      path = planSelection
-      break
-    case planSelection:
-      path = addonPicker
-      break
-    case addonPicker:
-      path = summary
-      break
-    default:
-      break
-  }
 
   const onNextPage = () => {
-    navigation(path)
+    navigation(nextPage)
   }
 
   const onGoBack = () => {
@@ -31,8 +13,8 @@ export const useChangePages = () => {
     })
   }
 
-  const onConfirm = () => {
-    navigation(success, {
+  const onSubmit = () => {
+    navigation(afterSubmitPage, {
       replace: true
     })
   }
@@ -40,8 +22,6 @@ export const useChangePages = () => {
   return {
     onNextPage,
     onGoBack,
-    onConfirm,
-    currentLocation: location.pathname,
-    ...paths
+    onSubmit
   }
 }

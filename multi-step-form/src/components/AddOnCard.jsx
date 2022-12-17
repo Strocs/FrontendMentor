@@ -1,4 +1,4 @@
-export const AddOnCard = ({
+export const AddonCard = ({
   name = '',
   description = '',
   price = '',

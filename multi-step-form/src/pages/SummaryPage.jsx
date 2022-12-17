@@ -1,15 +1,18 @@
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { HeaderLayout, PriceText } from '../components'
-import { prices } from '../helpers/prices'
+import { Header, PriceText } from '../components'
+import { FormContext } from '../context/formContext'
+import { prices } from '../services/prices'
 import { useChangePages } from '../hooks'
 
-export const SummaryPage = ({ plan, yearSubs, addons }) => {
+export const SummaryPage = () => {
+  const {plan, yearSubs, addons} = useContext(FormContext)
   const { planSelection } = useChangePages()
-
   const { planPrice, addonPrice, totalPrice } = prices(yearSubs, addons, plan)
+
   return (
     <>
-      <HeaderLayout
+      <Header
         title='Finishing Up'
         description='Double-check everything looks OK before confirming.'
       />
@@ -45,9 +48,10 @@ export const SummaryPage = ({ plan, yearSubs, addons }) => {
           ))}
         </ul>
       </div>
+      {/* component */}
       <div className='flex justify-between items-center px-4 pt-5 sm:px-7 sm:py-6'>
         <p className='text-Cool-gray text-sm'>
-          Total (per {yearSubs ? 'year' : 'month'})
+          Total per {yearSubs ? 'year' : 'month'}
         </p>
         <span className='text-Purplish-blue font-bold text-lg sm:text-xl'>
           <PriceText price={totalPrice} yearSubs={yearSubs} isPlan={false} />

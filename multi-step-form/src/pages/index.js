@@ -1,4 +1,4 @@
-export * from './AddOnPage'
+export * from './AddonPage'
 export * from './InfoPage'
 export * from './PlanPage'
 export * from './SummaryPage'

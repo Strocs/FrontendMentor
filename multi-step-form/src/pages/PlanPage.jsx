@@ -1,16 +1,19 @@
-import { PlanCard, ToggleButton, HeaderLayout, PlanIcon } from '../components'
-export const PlanPage = ({ plan, yearSubs, onInputChange }) => {
-
+import { useContext } from 'react'
+import { PlanCard, ToggleButton, Header, PlanIcon } from '../components'
+import { FormContext } from '../context/formContext'
+export const PlanPage = () => {
+  const { plan, yearSubs, onChangeValues } = useContext(FormContext)
+  
   const onToggle = yearly => {
-    onInputChange({ target: { name: 'yearSubs', value: yearly } })
+    onChangeValues('yearSubs', yearly)
   }
   const onSelectPlan = planName => {
-    onInputChange({ target: { name: 'plan', value: planName } })
+    onChangeValues('plan', planName)
   }
 
   return (
     <>
-      <HeaderLayout
+      <Header
         title='Select your plan'
         description='You have the option of monthly or yearly billing.'
       />
