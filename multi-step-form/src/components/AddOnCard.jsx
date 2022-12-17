@@ -1,3 +1,5 @@
+import checkmark from '/icon-checkmark.svg'
+
 export const AddonCard = ({
   name = '',
   description = '',
@@ -21,7 +23,7 @@ export const AddonCard = ({
         {isActive && (
           <img
             className='absolute z-10 bottom-0 left-0 right-0 top-0 m-auto'
-            src='/images/icon-checkmark.svg'
+            src={checkmark}
           />
         )}
       </div>

@@ -5,6 +5,10 @@ import { ToggleButton } from '../components/ToggleButton'
 import { Header } from '../components/Header'
 import { PlanIcon } from '../components/PlanIcon'
 
+import arcadeIcon from '/icon-arcade.svg'
+import advancedIcon from '/icon-advanced.svg'
+import proIcon from '/icon-pro.svg'
+
 export const PlanPage = () => {
   const { plan, yearSubs, onChangeValues } = useContext(FormContext)
 
@@ -28,7 +32,7 @@ export const PlanPage = () => {
           yearSubs={yearSubs}
           plan={plan}
           onSelectPlan={onSelectPlan}
-          image={<PlanIcon svgName='icon-arcade' />}
+          image={<PlanIcon icon={arcadeIcon} />}
         />
 
         <PlanCard
@@ -37,7 +41,7 @@ export const PlanPage = () => {
           yearSubs={yearSubs}
           plan={plan}
           onSelectPlan={onSelectPlan}
-          image={<PlanIcon svgName='icon-advanced' />}
+          image={<PlanIcon icon={advancedIcon} />}
         />
         <PlanCard
           title='Pro'
@@ -45,7 +49,7 @@ export const PlanPage = () => {
           yearSubs={yearSubs}
           plan={plan}
           onSelectPlan={onSelectPlan}
-          image={<PlanIcon svgName={'icon-pro'} />}
+          image={<PlanIcon icon={proIcon} />}
         />
       </div>
       <ToggleButton yearSubs={yearSubs} onToggle={onToggle} />

@@ -2,6 +2,9 @@ import { StepsList } from './StepsList'
 import { locations } from '../services/locations'
 import { paths } from '../services/paths'
 
+import bgDesktop from '/bg-sidebar-desktop.svg'
+import bgMobile from '/bg-sidebar-mobile.svg'
+
 export const Steps = () => {
   const { success } = paths
   const { currentPage } = locations()
@@ -10,9 +13,9 @@ export const Steps = () => {
       <picture className='absolute -z-10 sm:static sm:h-full min-w-full'>
         <source
           media='(min-width: 650px)'
-          srcSet='/images/bg-sidebar-desktop.svg'
+          srcSet={bgDesktop}
         />
-        <img className='sm:h-full min-w-full' src='/images/bg-sidebar-mobile.svg' />
+        <img className='sm:h-full min-w-full' src={bgMobile} />
       </picture>
       {currentPage !== success ? (
         <StepsList />
