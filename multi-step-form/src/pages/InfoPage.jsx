@@ -34,7 +34,7 @@ export const InfoPage = () => {
         <Input
           label='Phone Number'
           placeholder='e.g. +1 234 567 890'
-          type='phone'
+          type='tel'
           name='phone'
           value={phone}
           onChangeValues={onChangeValues}
