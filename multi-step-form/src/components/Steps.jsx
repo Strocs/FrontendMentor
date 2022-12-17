@@ -15,7 +15,7 @@ export const Steps = () => {
           media='(min-width: 650px)'
           srcSet={bgDesktop}
         />
-        <img className='sm:h-full min-w-full' src={bgMobile} />
+        <img className='sm:h-full min-w-full' src={bgMobile} alt='Steps Bar Background' />
       </picture>
       {currentPage !== success ? (
         <StepsList />
