@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution Code](https://github.com/Strocs/FrontendMentor/tree/main/multi-step-form)
-- Live Site URL: [Stats Preview Card](https://strocs.github.io/Frontend-Mentor_Stats-preview-card/)
+- Live Site URL: [Stats Preview Card](https://strocs-multi-step-form.netlify.app/)
 
 ## My process
 
