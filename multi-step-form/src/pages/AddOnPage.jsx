@@ -1,6 +1,5 @@
 import { useContext } from 'react'
-import { Header } from '../components'
-import { AddonCard } from '../components/AddonCard'
+import { Header, AddonCard } from '../components'
 import { FormContext } from '../context/formContext'
 
 export const AddonPage = () => {

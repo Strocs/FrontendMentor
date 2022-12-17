@@ -1,8 +1,8 @@
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Header, PriceText } from '../components'
-import { FormContext } from '../context/formContext'
-import { prices } from '../services/prices'
+import { FormContext } from '../context/FormContext'
+import { prices } from '../services'
 import { useChangePages } from '../hooks'
 
 export const SummaryPage = () => {

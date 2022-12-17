@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react"
-import { FormContext } from "../context/formContext"
+import { FormContext } from "../context/FormContext"
 
 export const useValidateChangePage = (onChangePage) => {
   const { name, email, phone, onValidate } = useContext(FormContext)

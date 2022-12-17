@@ -1,7 +1,6 @@
 import { Button } from '.'
 import { paths, locations } from '../services'
-import { useChangePages } from '../hooks/useChangePages'
-import { useValidateChangePage } from '../hooks'
+import { useChangePages, useValidateChangePage } from '../hooks'
 
 export const NavigationButtons = () => {
   const { nextPage, currentPage } = locations()

@@ -1,4 +1,4 @@
-import { useSubscription } from '../hooks/useSubscription'
+import { useSubscription } from '../hooks'
 import { FormContext } from './FormContext'
 
 export const FormProvider = ({ children }) => {
