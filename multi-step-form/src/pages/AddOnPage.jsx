@@ -1,6 +1,7 @@
 import { useContext } from 'react'
-import { Header, AddonCard } from '../components'
-import { FormContext } from '../context/formContext'
+import { FormContext } from '../context/FormContext'
+import { Header } from '../components/Header'
+import { AddonCard } from '../components/AddonCard'
 
 export const AddonPage = () => {
   const { addons, yearSubs, onChangeValues } = useContext(FormContext)

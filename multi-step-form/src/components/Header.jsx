@@ -1,4 +1,5 @@
-import { Description, Title } from '.'
+import { Description } from './Description'
+import { Title } from './Title'
 
 export const Header = ({ title = '', description = '' }) => {
   return (

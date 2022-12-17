@@ -1,12 +1,13 @@
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { Header, PriceText } from '../components'
 import { FormContext } from '../context/FormContext'
-import { prices } from '../services'
-import { useChangePages } from '../hooks'
+import { prices } from '../services/prices'
+import { useChangePages } from '../hooks/useChangePages'
+import { Header } from '../components/Header'
+import { PriceText } from '../components/PriceText'
 
 export const SummaryPage = () => {
-  const {plan, yearSubs, addons} = useContext(FormContext)
+  const { plan, yearSubs, addons } = useContext(FormContext)
   const { planSelection } = useChangePages()
   const { planPrice, addonPrice, totalPrice } = prices(yearSubs, addons, plan)
 

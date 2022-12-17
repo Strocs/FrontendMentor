@@ -1,6 +1,7 @@
 import { useContext } from 'react'
-import { Input, Header } from '../components'
-import { FormContext } from '../context/formContext'
+import { FormContext } from '../context/FormContext'
+import { Input } from '../components/Input'
+import { Header } from '../components/Header'
 
 export const InfoPage = () => {
   const { name, email, phone, onChangeValues, errors } = useContext(FormContext)

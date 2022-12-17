@@ -1,5 +1,7 @@
-import { locations, paths } from '../services'
-import { StepCircle, StepItem } from './'
+import { locations } from '../services/locations'
+import { paths } from '../services/paths'
+import { StepCircle } from './StepCircle'
+import { StepItem } from './StepItem'
 
 const { personal, planSelection, addonPicker, summary } = paths
 

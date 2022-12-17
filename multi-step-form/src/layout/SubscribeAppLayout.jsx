@@ -1,5 +1,7 @@
-import { Steps, NavigationButtons } from '../components'
-import { locations, paths } from '../services'
+import { Steps } from '../components/Steps'
+import { NavigationButtons } from '../components/NavigationButtons'
+import { locations } from '../services/locations'
+import { paths } from '../services/paths'
 
 export const SubscribeAppLayout = ({ children }) => {
   const { success } = paths

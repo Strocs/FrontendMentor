@@ -1,9 +1,13 @@
 import { useContext } from 'react'
-import { PlanCard, ToggleButton, Header, PlanIcon } from '../components'
-import { FormContext } from '../context/formContext'
+import { FormContext } from '../context/FormContext'
+import { PlanCard } from '../components/PlanCard'
+import { ToggleButton } from '../components/ToggleButton'
+import { Header } from '../components/Header'
+import { PlanIcon } from '../components/PlanIcon'
+
 export const PlanPage = () => {
   const { plan, yearSubs, onChangeValues } = useContext(FormContext)
-  
+
   const onToggle = yearly => {
     onChangeValues('yearSubs', yearly)
   }

@@ -1,4 +1,4 @@
-import { paths } from '.'
+import { paths } from './paths'
 import { useLocation } from 'react-router-dom'
 
 export const locations = () => {

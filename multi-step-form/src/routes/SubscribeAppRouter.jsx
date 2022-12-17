@@ -1,12 +1,10 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
-import {
-  AddonPage,
-  InfoPage,
-  PlanPage,
-  SummaryPage,
-  SuccessPage
-} from '../pages'
-import { paths } from '../services'
+import { AddonPage } from '../pages/AddonPage'
+import { InfoPage } from '../pages/InfoPage'
+import { PlanPage } from '../pages/PlanPage'
+import { SummaryPage } from '../pages/SummaryPage'
+import { SuccessPage } from '../pages/SuccessPage'
+import { paths } from '../services/paths'
 import { PrivateRoute } from './PrivateRoute'
 
 export const SubscribeAppRouter = () => {

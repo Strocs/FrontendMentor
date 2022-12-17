@@ -1,5 +1,6 @@
-import { StepsList } from '.'
-import { locations, paths } from '../services'
+import { StepsList } from './StepsList'
+import { locations } from '../services/locations'
+import { paths } from '../services/paths'
 
 export const Steps = () => {
   const { success } = paths
