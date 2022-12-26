@@ -15,7 +15,7 @@ export const useCountriesFiltered = (data = []) => {
     }
     setCountries(
       countriesRef.current.filter(d =>
-        d.name.common.toLowerCase().includes(query)
+        d.name.common.toLowerCase().includes(query.toLowerCase())
       )
     )
   }
