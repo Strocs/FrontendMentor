@@ -8,7 +8,6 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
   border-radius: .4rem;
   box-shadow: var(--boxShadow);
   background-color: white;
