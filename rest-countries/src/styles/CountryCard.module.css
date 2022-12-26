@@ -1,0 +1,51 @@
+.card {
+  height: 21.6rem;
+  max-width: 16.5rem;
+  width: 100%;
+  background-color: white;
+  box-shadow: var(--boxShadow);
+  list-style: none;
+  border-radius: .4rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 300ms ease;
+  max-height: 100%;
+}
+
+.card a {
+  text-decoration: none;
+  color: var(--Light-Mode-Text);
+}
+
+.card h2 {
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 1.4rem 0;
+  line-height: 1;
+}
+
+.card__flag {
+  min-height: 11rem;
+}
+
+.card__info {
+  padding: 0 1.8rem 3rem;
+}
+
+.card__info>div {
+  display: grid;
+  gap: .6rem;
+}
+
+.card:hover {
+  transform: rotate(5deg);
+}
+
+.dark {
+  background-color: var(--Dark-Mode-Elements);
+  box-shadow: var(--darkBoxShadow);
+}
+
+.dark a {
+  color: white;
+}

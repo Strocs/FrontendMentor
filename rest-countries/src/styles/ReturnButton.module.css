@@ -1,0 +1,32 @@
+.button {
+  display: flex;
+  gap: .6rem;
+  margin: 4rem 0;
+  padding: .6rem 1.8rem;
+  border-radius: .4rem;
+  box-shadow: var(--IntenseBoxShadow);
+  background-color: white;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:hover {
+  background: var(--gradient);
+  color: white;
+}
+
+.dark {
+  background-color: var(--Dark-Mode-Elements);
+  box-shadow: var(--darkBoxShadow);
+  color: white;
+}
+
+@media (min-width: 37.5rem) {
+  .button {
+    padding: .8rem 2rem;
+  }
+}

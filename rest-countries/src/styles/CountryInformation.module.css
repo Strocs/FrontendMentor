@@ -1,0 +1,15 @@
+.info {
+  font-size: .9rem;
+  line-height: .9;
+}
+
+.info>b {
+  font-weight: 600;
+}
+
+@media (min-width: 75rem) {
+  .info {
+    font-size: 1rem;
+    line-height: 1;
+  }
+}

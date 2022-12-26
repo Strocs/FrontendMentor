@@ -1,0 +1,24 @@
+.card {
+  height: 21.6rem;
+  max-width: 16.5rem;
+  width: 100%;
+  background: linear-gradient(90deg, rgb(255, 108, 108), rgb(255, 165, 165));
+  background-size: 1000%;
+  background-position: bottom left;
+  border-radius: .4rem;
+  overflow: hidden;
+  box-shadow: var(--boxShadow);
+  animation: bgAnimation 2000ms ease backwards infinite;
+}
+
+@keyframes bgAnimation {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}

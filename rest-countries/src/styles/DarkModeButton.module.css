@@ -1,0 +1,21 @@
+.button {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: .9rem;
+  color: var(--Light-Mode-Text);
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.dark {
+  color: var(--Dark-Mode-Text-Light-Mode-Elements);
+}
+
+.button:focus {
+  outline: none;
+}

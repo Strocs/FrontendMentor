@@ -1,0 +1,24 @@
+.link {
+  display: flex;
+  align-items: center;
+  box-shadow: var(--IntenseBoxShadow);
+  border-radius: .2rem;
+  padding: .6rem 1rem;
+  text-decoration: none;
+  min-width: 1rem;
+  font-size: .8rem;
+  line-height: .8;
+  color: var(--Light-Mode-Text);
+}
+
+.link:hover {
+  background: var(--gradient);
+  color: white;
+}
+
+
+.dark {
+  background-color: var(--Dark-Mode-Elements);
+  color: white;
+  box-shadow: var(--darkBoxShadow);
+}

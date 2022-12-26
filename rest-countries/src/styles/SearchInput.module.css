@@ -1,0 +1,43 @@
+.form {
+  display: flex;
+  align-items: center;
+  padding: 0 1.6rem;
+  gap: 1.6rem;
+  border-radius: .4rem;
+  background-color: white;
+  box-shadow: var(--boxShadow);
+  color: var(--Light-Mode-Input);
+  width: 100%;
+  max-width: 28rem;
+}
+
+.dark {
+  background-color: var(--Dark-Mode-Elements);
+  box-shadow: var(--darkBoxShadow);
+  color: white;
+
+}
+
+.form input {
+  padding: 1.2rem 0;
+  width: 100%;
+}
+
+.form input:focus {
+  outline: none;
+}
+
+.inputDark {
+  background-color: var(--Dark-Mode-Elements);
+  color: white;
+}
+
+.inputDark::placeholder {
+  color: white;
+}
+
+@media (min-width: 37.5rem) {
+  .form {
+      justify-content: space-between;
+  }
+}

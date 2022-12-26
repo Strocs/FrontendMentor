@@ -1,0 +1,13 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  max-width: var(--desktopMaxWidth);
+}
+
+@media (min-width: 992px) {
+  .list {
+    gap: 4.33333rem;
+  }
+}
