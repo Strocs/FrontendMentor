@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: hsl(0, 0%, 98%);
+  font-family: 'Poppins', sans-serif;
+}
+
+p {
+  color: hsl(229, 6%, 66%);
+}
+
+h1, h2, h3 {
+  color: hsl(234, 12%, 34%);
+}
+
