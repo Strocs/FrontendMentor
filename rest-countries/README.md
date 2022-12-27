@@ -55,4 +55,4 @@ Mainly I learn how to work with data fetching and loading data on routes with re
 
 - Website - [Strocs](https://github.com/Strocs)
 - Frontend Mentor - [@Strocs](https://www.frontendmentor.io/profile/Strocs)
-- Twitter - [@\_Strocs](https://www.instagram.com/_strocs/)
+- Instagram - [@\_Strocs](https://www.instagram.com/_strocs/)
