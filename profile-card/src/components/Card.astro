@@ -1,0 +1,25 @@
+---
+import { simplifyNumber } from '../utils/simplifyNumbers'
+export interface Props {
+	name: string
+	image: string
+	age: number
+	city: string
+	followers: number
+	likes: number
+	photos: number
+}
+
+const { name, image, age, city, followers, likes, photos } = Astro.props
+---
+
+<section class='link-card'>
+	<img src={image} alt={`${name} avatar`} />
+	<h1>{name} <span>{age}</span></h1>
+	<p>{city}</p>
+	<div class='flex'>
+		<div class='flex flex-col justify-center'><b>{simplifyNumber(followers)}</b> <span>Followers</span></div>
+		<div class='flex flex-col justify-center'><b>{simplifyNumber(likes)}</b> <span>Likes</span></div>
+		<div class='flex flex-col justify-center'><b>{simplifyNumber(photos)}</b> <span>Photos</span></div>
+	</div>
+</section>
