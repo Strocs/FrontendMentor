@@ -2,20 +2,19 @@
 import Layout from '../layouts/Layout.astro'
 import Card from '../components/Card.astro'
 
-const userData = { 
-	name: 'Victor Crest', 
-	image: '/image-victor.jpg', 
-	age: 26, 
-	city: 'London', 
-	followers: 80000, 
-	likes: 803000, 
-	photos: 1400 
+const userData = {
+	name: 'Victor Crest',
+	image: '/image-victor.jpg',
+	age: 26,
+	city: 'London',
+	followers: 80000,
+	likes: 803000,
+	photos: 1400,
 }
-
 ---
 
 <Layout title='Frontend Mentor | Profile card component' favicon='/favicon-32x32.png'>
-	<main>
+	<main class='relative bg-cyan h-screen w-full grid place-content-center bg-main bg-no-repeat bg-size-main bg-position-main '>
 		<Card {...userData} />
 	</main>
 </Layout>

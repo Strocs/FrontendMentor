@@ -11,15 +11,30 @@ export interface Props {
 }
 
 const { name, image, age, city, followers, likes, photos } = Astro.props
+
+// cyan: 'hsl(185, 75%, 39%)',
+// desBlue: 'hsl(229, 23%, 23%)',
+// grayBlue: 'hsl(227, 10%, 46%)',
+// gray: 'hsl(0, 0%, 59%)'
 ---
 
-<section class='link-card'>
-	<img src={image} alt={`${name} avatar`} />
-	<h1>{name} <span>{age}</span></h1>
-	<p>{city}</p>
-	<div class='flex'>
-		<div class='flex flex-col justify-center'><b>{simplifyNumber(followers)}</b> <span>Followers</span></div>
-		<div class='flex flex-col justify-center'><b>{simplifyNumber(likes)}</b> <span>Likes</span></div>
-		<div class='flex flex-col justify-center'><b>{simplifyNumber(photos)}</b> <span>Photos</span></div>
+<section class='bg-white bg-card bg-no-repeat bg- rounded-xl'>
+	<img src={image} alt={`${name} avatar`} class='rounded-full border-[5px] border-white mx-auto mt-[5.35rem] mb-4' />
+	<h1 class='text-desBlue text-center text-lg my-1'><b>{name}</b> <span class='text-grayBlue'>{age}</span></h1>
+	<p class='text-sm text-grayBlue text-center mb-6'>{city}</p>
+
+	<div class='flex justify-between border-t border-slate-200 gap-10 py-6 px-10'>
+		<div class='flex flex-col justify-center text-center'>
+			<b class='text-desBlue text-lg leading-normal'>{simplifyNumber(followers)}</b>
+			<span class='text-[0.625rem] tracking-[0.125rem] text-grayBlue'>Followers</span>
+		</div>
+		<div class='flex flex-col justify-center text-center'>
+			<b class='text-desBlue text-lg leading-normal'>{simplifyNumber(likes)}</b>
+			<span class='text-[0.625rem] tracking-[0.125rem] text-grayBlue'>Likes</span>
+		</div>
+		<div class='flex flex-col justify-center text-center'>
+			<b class='text-desBlue text-lg leading-normal'>{simplifyNumber(photos)}</b>
+			<span class='text-[0.625rem] tracking-[0.125rem] text-grayBlue'>Photos</span>
+		</div>
 	</div>
 </section>
